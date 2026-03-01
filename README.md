@@ -1,12 +1,12 @@
 # Paper-Based MCQ Scoring System
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](<[LICENSE](https://github.com/phamdoantinh/paper-based-mcq-scoring/blob/main/LICENSE)>)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.9.0-green.svg)](https://opencv.org/)
 [![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-red.svg)](https://docs.ultralytics.com/models/yolov8/)
 
-> **This is the `yolov8` branch — the original implementation as described in the published paper.**
-> A newer version using YOLOv11 and three separate specialized models is available on the `main` branch.
+> **This is the `main` branch — the original YOLOv8 implementation as described in the published paper.**
+> A newer version using YOLOv11 and three separate specialized models is available on the [`yolov11-version`](../../tree/yolov11-version) branch.
 
 An automated optical scoring system for paper-based multiple-choice question (MCQ) answer sheets. The system uses computer vision and deep learning (YOLOv8) to detect alignment markers, extract student/exam information, and recognize selected answers from scanned or photographed answer sheet images — producing structured JSON output suitable for downstream grading pipelines.
 
@@ -29,7 +29,6 @@ An automated optical scoring system for paper-based multiple-choice question (MC
 - [Grading With Answer Key](#grading-with-answer-key)
 - [Configuration](#configuration)
 - [Dataset](#dataset)
-- [License](#license)
 - [Citation](#citation)
 - [Contact](#contact)
 
@@ -127,7 +126,7 @@ Input image (JPG/PNG)
 ### 1. Clone the repository
 
 ```bash
-git clone -b yolov8 https://github.com/<your-username>/paper-based-mcq-scoring.git
+git clone https://github.com/<your-username>/paper-based-mcq-scoring.git
 cd paper-based-mcq-scoring
 ```
 
@@ -369,7 +368,7 @@ This branch uses a **single unified YOLOv8 model** (`best.pt`) trained on all 29
 
 The model is a custom-trained **YOLOv8** detector on a dataset of Vietnamese university MCQ answer sheets. The training methodology is described in the published paper (see [Citation](#citation)).
 
-> For the newer implementation with three specialized YOLOv11 models, see the `main` branch.
+> For the newer implementation with three specialized YOLOv11 models, see the [`yolov11-version`](../../tree/yolov11-version) branch.
 
 ---
 
@@ -403,36 +402,6 @@ The training and evaluation dataset for this system is publicly available on Zen
 **Dataset:** [https://doi.org/10.5281/zenodo.18816315](https://doi.org/10.5281/zenodo.18816315)
 
 The dataset contains labelled answer sheet images used to train and evaluate the YOLOv8 model for marker detection, student info recognition, and answer bubble classification.
-
----
-
-## License
-
-This project is licensed under the **MIT License**.
-
-```
-MIT License
-
-Copyright (c) 2024 Pham Doan Tinh, Ta Quang Minh
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
 
 ---
 
