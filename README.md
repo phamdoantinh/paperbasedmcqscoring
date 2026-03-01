@@ -1,7 +1,7 @@
 # Paper-Based MCQ Scoring System
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](<[LICENSE](https://github.com/phamdoantinh/paper-based-mcq-scoring/blob/main/LICENSE)>)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.9.0-green.svg)]()
 [![YOLOv11](https://img.shields.io/badge/YOLOv11-Ultralytics-red.svg)](https://docs.ultralytics.com/vi/models/yolo11/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18816315.svg)](https://doi.org/10.5281/zenodo.18816315)
@@ -50,10 +50,10 @@ The pipeline is designed for integration with an e-learning support platform but
 
 This repository maintains **two branches** corresponding to two distinct implementations:
 
-| Branch                     | Detector | Model strategy                    | Description                                                   |
-| -------------------------- | -------- | --------------------------------- | ------------------------------------------------------------- |
-| `yolov8` _(paper version)_ | yolov8m  | Single shared model               | As described in the published paper (Tinh & Minh, 2024)       |
-| `main` _(this branch)_     | YOLOv11m | Three separate specialized models | Upgraded implementation with improved accuracy and modularity |
+| Branch                            | Detector | Model strategy                    | Description                                                   |
+| --------------------------------- | -------- | --------------------------------- | ------------------------------------------------------------- |
+| `main` _(paper version)_          | YOLOv8m  | Single shared model               | As described in the published paper (Tinh & Minh, 2024)       |
+| `yolov11-version` _(this branch)_ | YOLOv11m | Three separate specialized models | Upgraded implementation with improved accuracy and modularity |
 
 ### Differences from the Published Paper Version
 
@@ -76,9 +76,9 @@ In this domain-specific application (answer sheet detection), YOLOv11 achieves h
 
 #### 2. Model Architecture: Single Model → Three Specialized Models
 
-The **paper version** (`yolov8` branch) uses a **single YOLOv8 model** trained on all detection tasks simultaneously (markers, student info digits, and answer bubbles). While this reduces the number of model files to maintain, it requires the model to generalize across visually very different object types.
+The **paper version** (`main` branch) uses a **single YOLOv8 model** trained on all detection tasks simultaneously (markers, student info digits, and answer bubbles). While this reduces the number of model files to maintain, it requires the model to generalize across visually very different object types.
 
-The **current version** (`main` branch) separates the detection into **three independent specialized models**, each trained exclusively on its own task:
+The **current version** (`yolov11-version` branch) separates the detection into **three independent specialized models**, each trained exclusively on its own task:
 
 | Model       | Task                                  | Benefit of specialization                      |
 | ----------- | ------------------------------------- | ---------------------------------------------- |
@@ -138,7 +138,7 @@ This specialization allows each model to be fine-tuned independently and retrain
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/paper-based-mcq-scoring.git
+git clone -b yolov11-version https://github.com/<your-username>/paper-based-mcq-scoring.git
 cd paper-based-mcq-scoring
 ```
 
@@ -333,7 +333,7 @@ After scoring, use the grading module to compare detected answers against the an
 nano grade_from_key/answer_key.json
 
 # 2. Run the grading script
-python3 grade_from_key/grade_from_key.py <exam_class_id>
+python grade_from_key/grade_from_key.py <exam_class_id>
 ```
 
 Output is printed to the console and saved to `grade_from_key/grading_report.json`.
@@ -350,9 +350,9 @@ This branch uses three custom-trained **YOLOv11** object detection models, one d
 | `info.pt`   | Student info zone OCR        | Cropped info zone (640×640)     | `0`–`9`, `unchoice` (uncircled/blank)                                                                                          |
 | `answer.pt` | Answer bubble classification | Cropped answer column (250×640) | `0000`, `0001`, `0010`, `0011`, `0100`, `0101`, `0110`, `0111`, `1000`, `1001`, `1010`, `1011`, `1100`, `1101`, `1110`, `1111` |
 
-All three models are based on the **YOLOv11m** (nano) architecture, trained on a custom dataset of Vietnamese university MCQ answer sheets.
+All three models are based on the **YOLOv11m** (medium) architecture, trained on a custom dataset of Vietnamese university MCQ answer sheets.
 
-> For the original single-model implementation as described in the published paper, refer to the `yolov8` branch.
+> For the original single-model implementation as described in the published paper, refer to the [`main`](../../tree/main) branch.
 
 ---
 
