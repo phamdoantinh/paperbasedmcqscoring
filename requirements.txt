@@ -1,5 +1,5 @@
 opencv-python-headless==4.9.0.80
-ultralytics>=8.0
+ultralytics>=8.3
 numpy>=1.21
-# Flask      # Only needed if deploying as a REST API service
-# uwsgi      # Only needed for production WSGI deployment
+# Flask       # Only needed if deploying as a REST API service
+# uwsgi       # Only needed for production WSGI deployment

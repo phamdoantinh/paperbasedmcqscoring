@@ -438,7 +438,7 @@
       ]
     },
     {
-      "student_code": "20192681",
+      "student_code": "20192680",
       "class_code": "150099",
       "exam_code": "101",
       "score": 10.0,
@@ -3465,10 +3465,10 @@
       "student_code": "58674546",
       "class_code": "247193",
       "exam_code": "568",
-      "score": 10.0,
+      "score": 9.83,
       "total_score": 10.0,
-      "n_correct": 60,
-      "n_incorrect": 0,
+      "n_correct": 59,
+      "n_incorrect": 1,
       "source_file": "demo9_data.json",
       "detail": [
         {
@@ -3536,10 +3536,10 @@
         },
         {
           "questionNo": 10,
-          "student_ans": "AC",
+          "student_ans": "A",
           "key_ans": "AC",
-          "earned": 0.1667,
-          "verdict": "correct"
+          "earned": 0.0,
+          "verdict": "incorrect"
         },
         {
           "questionNo": 11,

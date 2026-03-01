@@ -9,7 +9,8 @@ from utils import (
     orient_image_step_by_step, generate_output,
     get_parameter_number_anwser, get_remainder,
     remove_elements_info, remove_elements_answer, remove_elements_marker,
-    get_class, get_coordinates, get_coordinates_info,
+    get_class_answer, get_class_info, get_class_marker,
+    get_coordinates, get_coordinates_info,
     orient_image_by_angle, rotate_image_by_angle,
     warning_color, green_color, blue_color, threshold_warning,
     mergeImages, crop_image_answer, crop_image_info,
@@ -37,18 +38,18 @@ def get_marker(image, model, maybe_wrong_marker, folder_maybe_wrong):
             y2 = int(marker[3])
             conf = round(float(marker[4]), 3)
             class_marker = int(marker[5])
-            if (class_marker == 28):
+            if (class_marker == 1):
                 count_marker2 += 1
                 marker2 = [x1, y1]
-            if (class_marker == 27):
+            if (class_marker == 0):
                 count_maker1 += 1
-            if (class_marker == 27 or class_marker == 28):
+            if (class_marker == 0 or class_marker == 1):
                 list_marker.append([x1, y1])
                 marker_coordinates.append([x1, y1, x2, y2])
-            if (class_marker >= 27):
+            if (class_marker >= 0):
                 cv2.rectangle(image, (x1, y1), (x2, y2), green_color if conf > threshold_warning else warning_color,
                     1 if conf > threshold_warning else 2)
-                cv2.putText(image, str(get_class(class_marker)) if conf > threshold_warning else str(f"{get_class(class_marker)}-{conf}"),
+                cv2.putText(image, str(get_class_marker(class_marker)) if conf > threshold_warning else str(f"{get_class_marker(class_marker)}-{conf}"),
                     (x1, y1), cv2.FONT_HERSHEY_SIMPLEX, 0.4 if conf > threshold_warning else 0.5,
                     blue_color if conf > threshold_warning else warning_color, 1,cv2.LINE_AA)
      
@@ -59,7 +60,6 @@ def get_marker(image, model, maybe_wrong_marker, folder_maybe_wrong):
             raise Exception(error_message)
 
         marker_coordinates_true, alpha_degrees = orient_image_step_by_step(list_marker, marker_coordinates, marker2)
-        # print(marker_coordinates_true, alpha_degrees)
         rotated_image, rotation_matrix = rotate_image_by_angle(image, alpha_degrees)
     
         # ===== STEP 8 & 9: Crop image from the rotated image =====
@@ -79,7 +79,6 @@ def get_marker(image, model, maybe_wrong_marker, folder_maybe_wrong):
         
         # Show the cropped image
         imgResize_cropped = cv2.resize(cropped_document, (506, 800), interpolation=cv2.INTER_AREA)
-        
 
         return cropped_document, maybe_wrong_marker
     except Exception as e:
@@ -103,7 +102,7 @@ def predictAnswer(img, model, index, numberAnswer):
     for i, answer in enumerate(list_label):
         if index == get_parameter_number_anwser(numberAnswer) and i == get_remainder(numberAnswer):
             break
-        class_answer = get_class(int(answer[5]))
+        class_answer = get_class_answer(int(answer[5]))
         array_answer.append(class_answer)
         x1 = int(answer[0])
         y1 = int(answer[1])
@@ -112,20 +111,20 @@ def predictAnswer(img, model, index, numberAnswer):
         conf = round(float(answer[4]), 3)
         class_answer = int(answer[5])
         if conf < threshold_warning:
-            maybe_wrong_answer.append(f'[LOW CONF] Answer zone | File: {filename} | Question {index * 20 + i + 1} | Predicted: "{get_class(class_answer)}" | Conf: {conf}')
+            maybe_wrong_answer.append(f'[LOW CONF] Answer zone | File: {filename} | Question {index * 20 + i + 1} | Predicted: "{get_class_answer(class_answer)}" | Conf: {conf}')
             
-        for char in str(get_class(class_answer)):
+        for char in str(get_class_answer(class_answer)):
             point1, point2, point3, point4 = get_coordinates(x1, y1, x2, y2, char)
             # Draw rectangle on unanswered labels only when conf < threshold_warning
             if char == "x":
                 if conf < threshold_warning:
                     cv2.rectangle(img, (point1, point2), (point3, point4), warning_color, 2)
-                    cv2.putText(img, str(f"{get_class(class_answer)}-{conf}"),
+                    cv2.putText(img, str(f"{get_class_answer(class_answer)}-{conf}"),
                         (point1, point2), cv2.FONT_HERSHEY_SIMPLEX, 0.5, warning_color, 1,cv2.LINE_AA)
             else:
                 cv2.rectangle(img, (point1, point2), (point3, point4), green_color if conf > threshold_warning else warning_color,
                     1 if conf > threshold_warning else 2)
-                cv2.putText(img, str(char) if conf > threshold_warning else str(f"{get_class(class_answer)}-{conf}"),
+                cv2.putText(img, str(char) if conf > threshold_warning else str(f"{get_class_answer(class_answer)}-{conf}"),
                     (point1, point2), cv2.FONT_HERSHEY_SIMPLEX, 0.4 if conf > threshold_warning else 0.5,
                     blue_color if conf > threshold_warning else warning_color, 1,cv2.LINE_AA)
         img_graft = cv2.resize(img, (350, 896), interpolation=cv2.INTER_AREA)
@@ -144,7 +143,7 @@ def predictInfo(img, model, filename):
     list_label = remove_elements_info(list_label)
     dict_info = {}
     for i, info in enumerate(list_label):
-        class_info = get_class(int(info[5]))
+        class_info = get_class_info(int(info[5]))
         dict_info[f"{i+1}"] = class_info
         x1 = int(info[0])
         y1 = int(info[1])
@@ -153,12 +152,12 @@ def predictInfo(img, model, filename):
         conf = round(float(info[4]), 3)
         class_info = int(info[5])
         if conf < threshold_warning:
-            maybe_wrong_info.append(f'[LOW CONF] Info zone | File: {filename} | Column {i + 1} (left→right) | Predicted: "{get_class(class_info)}" | Conf: {conf}')
+            maybe_wrong_info.append(f'[LOW CONF] Info zone | File: {filename} | Column {i + 1} (left→right) | Predicted: "{get_class_info(class_info)}" | Conf: {conf}')
 
-        point1, point2, point3, point4 = get_coordinates_info(x1, y1, x2, y2, get_class(class_info))
+        point1, point2, point3, point4 = get_coordinates_info(x1, y1, x2, y2, get_class_info(class_info))
         cv2.rectangle(img, (point1, point2), (point3, point4), 
             green_color if conf > threshold_warning else warning_color, 1 if conf > threshold_warning else 2)
-        cv2.putText(img, str(get_class(class_info)) if conf > threshold_warning else str(f"{get_class(class_info)}-{conf}"), 
+        cv2.putText(img, str(get_class_info(class_info)) if conf > threshold_warning else str(f"{get_class_info(class_info)}-{conf}"), 
             (point1, point2),cv2.FONT_HERSHEY_SIMPLEX,
             0.4 if conf > threshold_warning else 0.5, blue_color if conf > threshold_warning else warning_color, 1 ,cv2.LINE_AA,)
     if numberClassRecognition > 5:
@@ -179,10 +178,12 @@ if __name__ == "__main__":
     # ========================== Measure execution time ====================================
     # start_time = time.time()
     # ===================== Declare and load models ==============================
-    pWeight = "./Model/best.pt"
-    model_info = YOLO(pWeight)
-    model_marker = YOLO(pWeight)
-    model_answer = YOLO(pWeight)
+    pWeight_marker = "./Model/marker.pt"
+    pWeight_answer = "./Model/answer.pt"
+    pWeight_info = "./Model/info.pt"
+    model_info = YOLO(pWeight_info)
+    model_marker = YOLO(pWeight_marker)
+    model_answer = YOLO(pWeight_answer)
     # ======================= Declare command-line arguments ===============================
     parser = argparse.ArgumentParser(description="Process some integers.")
     parser.add_argument("input", help="input")
@@ -231,7 +232,7 @@ if __name__ == "__main__":
         if filename.lower().endswith((".jpg", ".jpeg", ".png")):
             image_path = os.path.join(folder_path, filename)
             image = cv2.imread(image_path)
-            document, maybe_wrong_marker = get_marker(image, model_marker, maybe_wrong_marker, folder_maybe_wrong)
+            document, maybe_wrong_marker = get_marker(image, model_marker, maybe_wrong_marker,folder_maybe_wrong)
             if (document is None):
                 continue
             
