@@ -1,0 +1,3897 @@
+{
+  "exam_class_id": "demo1",
+  "exam_name": "Midterm Examination",
+  "subject": "Introduction to Computer Science",
+  "scoring_rule": "exact_match_only",
+  "total_score": 10.0,
+  "results": [
+    {
+      "student_code": "20193021",
+      "class_code": "247103",
+      "exam_code": "568",
+      "score": 1.67,
+      "total_score": 10.0,
+      "n_correct": 10,
+      "n_incorrect": 50,
+      "source_file": "demo10_data.json",
+      "detail": [
+        {
+          "questionNo": 1,
+          "student_ans": "A",
+          "key_ans": "AC",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 2,
+          "student_ans": "D",
+          "key_ans": "ACD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 3,
+          "student_ans": "C",
+          "key_ans": "AB",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 4,
+          "student_ans": "B",
+          "key_ans": "BD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 5,
+          "student_ans": "AD",
+          "key_ans": "",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 6,
+          "student_ans": "CD",
+          "key_ans": "B",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 7,
+          "student_ans": "AC",
+          "key_ans": "A",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 8,
+          "student_ans": "BC",
+          "key_ans": "",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 9,
+          "student_ans": "ACD",
+          "key_ans": "BD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 10,
+          "student_ans": "BCD",
+          "key_ans": "AC",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 11,
+          "student_ans": "ABC",
+          "key_ans": "ACD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 12,
+          "student_ans": "ABD",
+          "key_ans": "BD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 13,
+          "student_ans": "AB",
+          "key_ans": "A",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 14,
+          "student_ans": "BD",
+          "key_ans": "AC",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 15,
+          "student_ans": "",
+          "key_ans": "C",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 16,
+          "student_ans": "ABCD",
+          "key_ans": "CD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 17,
+          "student_ans": "B",
+          "key_ans": "BD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 18,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 19,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 20,
+          "student_ans": "A",
+          "key_ans": "AC",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 21,
+          "student_ans": "AB",
+          "key_ans": "BD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 22,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 23,
+          "student_ans": "AD",
+          "key_ans": "D",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 24,
+          "student_ans": "BC",
+          "key_ans": "BC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 25,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 26,
+          "student_ans": "CD",
+          "key_ans": "ACD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 27,
+          "student_ans": "ABC",
+          "key_ans": "AC",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 28,
+          "student_ans": "ABD",
+          "key_ans": "B",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 29,
+          "student_ans": "BCD",
+          "key_ans": "A",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 30,
+          "student_ans": "ACD",
+          "key_ans": "C",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 31,
+          "student_ans": "",
+          "key_ans": "ACD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 32,
+          "student_ans": "ABCD",
+          "key_ans": "C",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 33,
+          "student_ans": "A",
+          "key_ans": "ACD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 34,
+          "student_ans": "C",
+          "key_ans": "B",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 35,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 36,
+          "student_ans": "D",
+          "key_ans": "AD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 37,
+          "student_ans": "BC",
+          "key_ans": "ACD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 38,
+          "student_ans": "AD",
+          "key_ans": "AC",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 39,
+          "student_ans": "AB",
+          "key_ans": "BD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 40,
+          "student_ans": "AC",
+          "key_ans": "A",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 41,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 42,
+          "student_ans": "CD",
+          "key_ans": "ACD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 43,
+          "student_ans": "ABD",
+          "key_ans": "AC",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 44,
+          "student_ans": "ACD",
+          "key_ans": "D",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 45,
+          "student_ans": "BCD",
+          "key_ans": "B",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 46,
+          "student_ans": "ABC",
+          "key_ans": "AB",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 47,
+          "student_ans": "",
+          "key_ans": "A",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 48,
+          "student_ans": "ABCD",
+          "key_ans": "C",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 49,
+          "student_ans": "A",
+          "key_ans": "ACD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 50,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 51,
+          "student_ans": "C",
+          "key_ans": "A",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 52,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 53,
+          "student_ans": "BC",
+          "key_ans": "BD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 54,
+          "student_ans": "BD",
+          "key_ans": "AB",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 55,
+          "student_ans": "AB",
+          "key_ans": "AC",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 56,
+          "student_ans": "CD",
+          "key_ans": "CD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 57,
+          "student_ans": "AC",
+          "key_ans": "AB",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 58,
+          "student_ans": "AD",
+          "key_ans": "AC",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 59,
+          "student_ans": "BCD",
+          "key_ans": "B",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 60,
+          "student_ans": "ABC",
+          "key_ans": "ACD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        }
+      ]
+    },
+    {
+      "student_code": "20192681",
+      "class_code": "150099",
+      "exam_code": "101",
+      "score": 10.0,
+      "total_score": 10.0,
+      "n_correct": 60,
+      "n_incorrect": 0,
+      "source_file": "demo1_data.json",
+      "detail": [
+        {
+          "questionNo": 1,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 2,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 3,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 4,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 5,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 6,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 7,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 8,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 9,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 10,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 11,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 12,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 13,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 14,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 15,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 16,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 17,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 18,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 19,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 20,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 21,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 22,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 23,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 24,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 25,
+          "student_ans": "BC",
+          "key_ans": "BC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 26,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 27,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 28,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 29,
+          "student_ans": "AD",
+          "key_ans": "AD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 30,
+          "student_ans": "CD",
+          "key_ans": "CD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 31,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 32,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 33,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 34,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 35,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 36,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 37,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 38,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 39,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 40,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 41,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 42,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 43,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 44,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 45,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 46,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 47,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 48,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 49,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 50,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 51,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 52,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 53,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 54,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 55,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 56,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 57,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 58,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 59,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 60,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        }
+      ]
+    },
+    {
+      "student_code": "20192760",
+      "class_code": "150099",
+      "exam_code": "101",
+      "score": 8.0,
+      "total_score": 10.0,
+      "n_correct": 48,
+      "n_incorrect": 12,
+      "source_file": "demo2_data.json",
+      "detail": [
+        {
+          "questionNo": 1,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 2,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 3,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 4,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 5,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 6,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 7,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 8,
+          "student_ans": "C",
+          "key_ans": "B",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 9,
+          "student_ans": "BD",
+          "key_ans": "C",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 10,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 11,
+          "student_ans": "AD",
+          "key_ans": "B",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 12,
+          "student_ans": "D",
+          "key_ans": "C",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 13,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 14,
+          "student_ans": "A",
+          "key_ans": "C",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 15,
+          "student_ans": "B",
+          "key_ans": "C",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 16,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 17,
+          "student_ans": "C",
+          "key_ans": "D",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 18,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 19,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 20,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 21,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 22,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 23,
+          "student_ans": "BC",
+          "key_ans": "B",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 24,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 25,
+          "student_ans": "ABC",
+          "key_ans": "BC",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 26,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 27,
+          "student_ans": "B",
+          "key_ans": "C",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 28,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 29,
+          "student_ans": "A",
+          "key_ans": "AD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 30,
+          "student_ans": "BCD",
+          "key_ans": "CD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 31,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 32,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 33,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 34,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 35,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 36,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 37,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 38,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 39,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 40,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 41,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 42,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 43,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 44,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 45,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 46,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 47,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 48,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 49,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 50,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 51,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 52,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 53,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 54,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 55,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 56,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 57,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 58,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 59,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 60,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        }
+      ]
+    },
+    {
+      "student_code": "20192755",
+      "class_code": "150099",
+      "exam_code": "102",
+      "score": 10.0,
+      "total_score": 10.0,
+      "n_correct": 60,
+      "n_incorrect": 0,
+      "source_file": "demo3_data.json",
+      "detail": [
+        {
+          "questionNo": 1,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 2,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 3,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 4,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 5,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 6,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 7,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 8,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 9,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 10,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 11,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 12,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 13,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 14,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 15,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 16,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 17,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 18,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 19,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 20,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 21,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 22,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 23,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 24,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 25,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 26,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 27,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 28,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 29,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 30,
+          "student_ans": "CD",
+          "key_ans": "CD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 31,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 32,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 33,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 34,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 35,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 36,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 37,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 38,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 39,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 40,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 41,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 42,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 43,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 44,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 45,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 46,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 47,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 48,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 49,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 50,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 51,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 52,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 53,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 54,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 55,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 56,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 57,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 58,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 59,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 60,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        }
+      ]
+    },
+    {
+      "student_code": "20192830",
+      "class_code": "150099",
+      "exam_code": "101",
+      "score": 8.17,
+      "total_score": 10.0,
+      "n_correct": 49,
+      "n_incorrect": 11,
+      "source_file": "demo4_data.json",
+      "detail": [
+        {
+          "questionNo": 1,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 2,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 3,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 4,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 5,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 6,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 7,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 8,
+          "student_ans": "C",
+          "key_ans": "B",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 9,
+          "student_ans": "BD",
+          "key_ans": "C",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 10,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 11,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 12,
+          "student_ans": "D",
+          "key_ans": "C",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 13,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 14,
+          "student_ans": "A",
+          "key_ans": "C",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 15,
+          "student_ans": "B",
+          "key_ans": "C",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 16,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 17,
+          "student_ans": "C",
+          "key_ans": "D",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 18,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 19,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 20,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 21,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 22,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 23,
+          "student_ans": "BC",
+          "key_ans": "B",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 24,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 25,
+          "student_ans": "ABC",
+          "key_ans": "BC",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 26,
+          "student_ans": "AC",
+          "key_ans": "A",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 27,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 28,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 29,
+          "student_ans": "A",
+          "key_ans": "AD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 30,
+          "student_ans": "BCD",
+          "key_ans": "CD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 31,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 32,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 33,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 34,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 35,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 36,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 37,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 38,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 39,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 40,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 41,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 42,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 43,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 44,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 45,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 46,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 47,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 48,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 49,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 50,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 51,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 52,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 53,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 54,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 55,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 56,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 57,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 58,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 59,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 60,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        }
+      ]
+    },
+    {
+      "student_code": "20193046",
+      "class_code": "247103",
+      "exam_code": "423",
+      "score": 8.67,
+      "total_score": 10.0,
+      "n_correct": 52,
+      "n_incorrect": 8,
+      "source_file": "demo5_data.json",
+      "detail": [
+        {
+          "questionNo": 1,
+          "student_ans": "ABC",
+          "key_ans": "AB",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 2,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 3,
+          "student_ans": "AB",
+          "key_ans": "ABCD",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 4,
+          "student_ans": "ABCD",
+          "key_ans": "ABCD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 5,
+          "student_ans": "",
+          "key_ans": "B",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 6,
+          "student_ans": "BC",
+          "key_ans": "BC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 7,
+          "student_ans": "AD",
+          "key_ans": "AD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 8,
+          "student_ans": "CD",
+          "key_ans": "CD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 9,
+          "student_ans": "ABCD",
+          "key_ans": "ABCD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 10,
+          "student_ans": "",
+          "key_ans": "C",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 11,
+          "student_ans": "BCD",
+          "key_ans": "BCD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 12,
+          "student_ans": "ABD",
+          "key_ans": "ABD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 13,
+          "student_ans": "AD",
+          "key_ans": "AD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 14,
+          "student_ans": "ABD",
+          "key_ans": "ABD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 15,
+          "student_ans": "",
+          "key_ans": "C",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 16,
+          "student_ans": "ABCD",
+          "key_ans": "ABC",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 17,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 18,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 19,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 20,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 21,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 22,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 23,
+          "student_ans": "AD",
+          "key_ans": "AD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 24,
+          "student_ans": "BC",
+          "key_ans": "BC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 25,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 26,
+          "student_ans": "CD",
+          "key_ans": "CD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 27,
+          "student_ans": "ABC",
+          "key_ans": "ABC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 28,
+          "student_ans": "ABD",
+          "key_ans": "ABD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 29,
+          "student_ans": "BCD",
+          "key_ans": "BCD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 30,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 31,
+          "student_ans": "",
+          "key_ans": "D",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 32,
+          "student_ans": "ABCD",
+          "key_ans": "ABCD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 33,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 34,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 35,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 36,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 37,
+          "student_ans": "BC",
+          "key_ans": "BC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 38,
+          "student_ans": "AD",
+          "key_ans": "AD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 39,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 40,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 41,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 42,
+          "student_ans": "CD",
+          "key_ans": "CD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 43,
+          "student_ans": "ABD",
+          "key_ans": "ABD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 44,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 45,
+          "student_ans": "BCD",
+          "key_ans": "BCD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 46,
+          "student_ans": "ABC",
+          "key_ans": "ABC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 47,
+          "student_ans": "",
+          "key_ans": "A",
+          "earned": 0.0,
+          "verdict": "incorrect"
+        },
+        {
+          "questionNo": 48,
+          "student_ans": "ABCD",
+          "key_ans": "ABCD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 49,
+          "student_ans": "ABD",
+          "key_ans": "ABD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 50,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 51,
+          "student_ans": "AD",
+          "key_ans": "AD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 52,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 53,
+          "student_ans": "BC",
+          "key_ans": "BC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 54,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 55,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 56,
+          "student_ans": "CD",
+          "key_ans": "CD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 57,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 58,
+          "student_ans": "AD",
+          "key_ans": "AD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 59,
+          "student_ans": "BCD",
+          "key_ans": "BCD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 60,
+          "student_ans": "ABC",
+          "key_ans": "ABC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        }
+      ]
+    },
+    {
+      "student_code": "58674546",
+      "class_code": "247193",
+      "exam_code": "568",
+      "score": 10.0,
+      "total_score": 10.0,
+      "n_correct": 60,
+      "n_incorrect": 0,
+      "source_file": "demo6_data.json",
+      "detail": [
+        {
+          "questionNo": 1,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 2,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 3,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 4,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 5,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 6,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 7,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 8,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 9,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 10,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 11,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 12,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 13,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 14,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 15,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 16,
+          "student_ans": "CD",
+          "key_ans": "CD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 17,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 18,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 19,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 20,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 21,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 22,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 23,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 24,
+          "student_ans": "BC",
+          "key_ans": "BC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 25,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 26,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 27,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 28,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 29,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 30,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 31,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 32,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 33,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 34,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 35,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 36,
+          "student_ans": "AD",
+          "key_ans": "AD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 37,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 38,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 39,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 40,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 41,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 42,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 43,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 44,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 45,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 46,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 47,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 48,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 49,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 50,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 51,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 52,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 53,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 54,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 55,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 56,
+          "student_ans": "CD",
+          "key_ans": "CD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 57,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 58,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 59,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 60,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        }
+      ]
+    },
+    {
+      "student_code": "58674546",
+      "class_code": "247193",
+      "exam_code": "568",
+      "score": 10.0,
+      "total_score": 10.0,
+      "n_correct": 60,
+      "n_incorrect": 0,
+      "source_file": "demo8_data.json",
+      "detail": [
+        {
+          "questionNo": 1,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 2,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 3,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 4,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 5,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 6,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 7,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 8,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 9,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 10,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 11,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 12,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 13,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 14,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 15,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 16,
+          "student_ans": "CD",
+          "key_ans": "CD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 17,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 18,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 19,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 20,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 21,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 22,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 23,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 24,
+          "student_ans": "BC",
+          "key_ans": "BC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 25,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 26,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 27,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 28,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 29,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 30,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 31,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 32,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 33,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 34,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 35,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 36,
+          "student_ans": "AD",
+          "key_ans": "AD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 37,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 38,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 39,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 40,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 41,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 42,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 43,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 44,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 45,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 46,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 47,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 48,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 49,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 50,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 51,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 52,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 53,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 54,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 55,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 56,
+          "student_ans": "CD",
+          "key_ans": "CD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 57,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 58,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 59,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 60,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        }
+      ]
+    },
+    {
+      "student_code": "58674546",
+      "class_code": "247193",
+      "exam_code": "568",
+      "score": 10.0,
+      "total_score": 10.0,
+      "n_correct": 60,
+      "n_incorrect": 0,
+      "source_file": "demo9_data.json",
+      "detail": [
+        {
+          "questionNo": 1,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 2,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 3,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 4,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 5,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 6,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 7,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 8,
+          "student_ans": "",
+          "key_ans": "",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 9,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 10,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 11,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 12,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 13,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 14,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 15,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 16,
+          "student_ans": "CD",
+          "key_ans": "CD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 17,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 18,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 19,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 20,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 21,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 22,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 23,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 24,
+          "student_ans": "BC",
+          "key_ans": "BC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 25,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 26,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 27,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 28,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 29,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 30,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 31,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 32,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 33,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 34,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 35,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 36,
+          "student_ans": "AD",
+          "key_ans": "AD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 37,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 38,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 39,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 40,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 41,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 42,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 43,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 44,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 45,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 46,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 47,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 48,
+          "student_ans": "C",
+          "key_ans": "C",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 49,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 50,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 51,
+          "student_ans": "A",
+          "key_ans": "A",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 52,
+          "student_ans": "D",
+          "key_ans": "D",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 53,
+          "student_ans": "BD",
+          "key_ans": "BD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 54,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 55,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 56,
+          "student_ans": "CD",
+          "key_ans": "CD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 57,
+          "student_ans": "AB",
+          "key_ans": "AB",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 58,
+          "student_ans": "AC",
+          "key_ans": "AC",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 59,
+          "student_ans": "B",
+          "key_ans": "B",
+          "earned": 0.1667,
+          "verdict": "correct"
+        },
+        {
+          "questionNo": 60,
+          "student_ans": "ACD",
+          "key_ans": "ACD",
+          "earned": 0.1667,
+          "verdict": "correct"
+        }
+      ]
+    }
+  ]
+}

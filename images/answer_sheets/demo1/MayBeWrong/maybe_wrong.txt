@@ -1,0 +1,2 @@
+Image demo7.jpg could not detect enough markers or may be missing corners
+[LOW CONF] Answer zone | File: demo9.jpg | Question 14 | Predicted: "AC" | Conf: 0.635
