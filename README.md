@@ -1,7 +1,7 @@
 # Paper-Based MCQ Scoring System
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](<[LICENSE](https://github.com/phamdoantinh/paper-based-mcq-scoring/blob/main/LICENSE)>)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](<[LICENSE](https://github.com/phamdoantinh/paperbasedmcqscoring/blob/main/LICENSE)>)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.9.0-green.svg)](https://opencv.org/)
 [![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-red.svg)](https://docs.ultralytics.com/models/yolov8/)
 
@@ -126,8 +126,8 @@ Input image (JPG/PNG)
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/paper-based-mcq-scoring.git
-cd paper-based-mcq-scoring
+git clone https://github.com/<your-username>/paperbasedmcqscoring.git
+cd paperbasedmcqscoring
 ```
 
 ### 2. (Optional) Create a virtual environment
@@ -169,7 +169,7 @@ Model/
 ## Directory Structure
 
 ```
-paper-based-mcq-scoring/
+paperbasedmcqscoring/
 │
 ├── Model/
 │   └── best.pt                         # Pre-trained YOLOv8 weights (all tasks)
