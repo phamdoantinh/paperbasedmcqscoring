@@ -1,7 +1,7 @@
 # Paper-Based MCQ Scoring System
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](<[LICENSE](https://github.com/phamdoantinh/paper-based-mcq-scoring/blob/main/LICENSE)>)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](<[LICENSE](https://github.com/phamdoantinh/paperbasedmcqscoring/blob/main/LICENSE)>)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.9.0-green.svg)]()
 [![YOLOv11](https://img.shields.io/badge/YOLOv11-Ultralytics-red.svg)](https://docs.ultralytics.com/vi/models/yolo11/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18816315.svg)](https://doi.org/10.5281/zenodo.18816315)
@@ -138,8 +138,8 @@ This specialization allows each model to be fine-tuned independently and retrain
 ### 1. Clone the repository
 
 ```bash
-git clone -b yolov11-version https://github.com/<your-username>/paper-based-mcq-scoring.git
-cd paper-based-mcq-scoring
+git clone -b yolov11-version https://github.com/<your-username>/paperbasedmcqscoring.git
+cd paperbasedmcqscoring
 ```
 
 ### 2. Create and activate a virtual environment (recommended)
@@ -179,7 +179,7 @@ Model/
 ## Directory Structure
 
 ```
-paper-based-mcq-scoring/
+paperbasedmcqscoring/
 │
 ├── Model/                          # Pre-trained YOLOv11 weights
 │   ├── marker.pt
