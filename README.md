@@ -22,7 +22,6 @@ An automated optical scoring system for paper-based multiple-choice question (MC
 - [Answer Sheet Template](#answer-sheet-template)
 - [Usage](#usage)
 - [Models](#models)
-- [Grading With Answer Key](#grading-with-answer-key)
 - [Dataset](#dataset)
 - [Citation](#citation)
 - [Contact](#contact)
@@ -35,16 +34,14 @@ An automated optical scoring system for paper-based multiple-choice question (MC
 
 The following resources are **included in this repository** to allow direct reproduction of the reported results:
 
-| Resource                  | Path                                         | Description                                              |
-| ------------------------- | -------------------------------------------- | -------------------------------------------------------- |
-| Pretrained model weights  | `Model/best.pt`                              | Fine-tuned YOLOv8m detector (~52 MB) — **included**      |
-| Sample answer sheets      | `images/demo1/`                              | 10 real scanned answer sheet images                      |
-| Example answer key        | `grade_from_key/answer_key.json`             | Correct answers for exam sets 101, 102, 568, 423         |
-| Expected scored output    | `images/demo1/ScoredSheets/`                 | Pre-computed JSON result per sheet                       |
-| Expected grading report   | `grade_from_key/grading_report.json`         | Pre-computed grading report for `demo1`                  |
-| Grading demo (standalone) | `example_grading/`                           | Self-contained grading example — no model/images needed  |
-
-📄 **Step-by-step guide → [`REPRODUCE.md`](REPRODUCE.md)**
+| Resource                  | Path                                 | Description                                             |
+| ------------------------- | ------------------------------------ | ------------------------------------------------------- |
+| Pretrained model weights  | `Model/best.pt`                      | Fine-tuned YOLOv8m detector (~52 MB) — **included**     |
+| Sample answer sheets      | `images/demo1/`                      | 10 real scanned answer sheet images                     |
+| Example answer key        | `grade_from_key/answer_key.json`     | Correct answers for exam sets 101, 102, 568, 423        |
+| Expected scored output    | `images/demo1/ScoredSheets/`         | Pre-computed JSON result per sheet                      |
+| Expected grading report   | `grade_from_key/grading_report.json` | Pre-computed grading report for `demo1`                 |
+| Grading demo (standalone) | `example_grading/`                   | Self-contained grading example — no model/images needed |
 
 **Option A — Test the grading module only (no model or images required):**
 
@@ -150,6 +147,7 @@ paperbasedmcqscoring/
 │   ├── AnswerSheetTemplate.png
 │   └── StructureDiagram.png
 ├── REPRODUCE.md                        # Step-by-step reproducibility guide
+├── example_grading/                    # Zero-dependency grading demo
 ├── requirements.txt
 └── README.md
 ```
@@ -206,7 +204,7 @@ For each processed sheet (e.g., `demo1.jpg`), the system produces:
 
 This branch uses a **single unified YOLOv8 model** (`best.pt`) trained on all 29 classes across three detection tasks simultaneously: alignment markers, student info digits, and answer bubbles.
 
-The model was obtained by fine-tuning the publicly available **YOLOv8m** pretrained weights (`yolov8m.pt`) from [Ultralytics](https://github.com/ultralytics/ultralytics) on our custom dataset of Vietnamese university MCQ answer sheets. The training dataset is publicly available on Zenodo (see [Dataset](#https://doi.org/10.5281/zenodo.18816315)).
+The model was obtained by fine-tuning the publicly available **YOLOv8m** pretrained weights (`yolov8m.pt`) from [Ultralytics](https://github.com/ultralytics/ultralytics) on our custom dataset of Vietnamese university MCQ answer sheets. The training dataset is publicly available on Zenodo (see [Dataset](https://doi.org/10.5281/zenodo.18816315)).
 
 | Class index | Class label            | Task             |
 | ----------- | ---------------------- | ---------------- |
@@ -217,24 +215,6 @@ The model was obtained by fine-tuning the publicly available **YOLOv8m** pretrai
 | 28          | `marker2`              | Alignment marker |
 
 > For the newer implementation with three specialized YOLOv11 models, see the [`yolov11-version`](../../tree/yolov11-version) branch.
-
----
-
-## Grading With Answer Key
-
-After scoring, use the grading module to compare detected answers against the answer key and compute each student's score.
-
-📄 **Full instructions → [`grade_from_key/README.md`](grade_from_key/README.md)**
-
-```bash
-# 1. (Optional) Edit the correct answers per exam set code
-nano grade_from_key/answer_key.json
-
-# 2. Run the grading script
-python3 grade_from_key/grade_from_key.py <exam_class_id>
-```
-
-Output is printed to the console and saved to `grade_from_key/grading_report.json`.
 
 ---
 
