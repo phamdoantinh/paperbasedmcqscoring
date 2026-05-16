@@ -220,17 +220,14 @@ paperbasedmcqscoring/
 │   └── answer.pt
 │
 ├── images/
-│   └── answer_sheets/
-│       └── <exam_class_id>/        # One folder per exam session
-│           ├── 1.jpg               # Input answer sheet images
-│           ├── 2.jpg
-│           ├── ...
-│           ├── HandledSheets/      # (auto-created) Annotated output images
-│           ├── ScoredSheets/       # (auto-created) JSON result files
-│           └── MayBeWrong/         # (auto-created) Low-confidence warning log
+│   └── <exam_class_id>/            # One folder per exam session
+│       ├── 1.jpg                   # Input answer sheet images
+│       ├── HandledSheets/          # (auto-created) Annotated output images
+│       ├── ScoredSheets/           # (auto-created) JSON result files
+│       └── MayBeWrong/             # (auto-created) Low-confidence warning log
 │
 ├── scoring.py                      # Main scoring pipeline
-├── utils.py                        # All utility functions (geometry, labels, image helpers)
+├── utils.py                        # All utility functions
 ├── grade_from_key/                 # Grading module
 │   ├── grade_from_key.py           # Script: compare scored sheets against answer key
 │   ├── answer_key.json             # Answer key (fill in correct answers per exam set)
