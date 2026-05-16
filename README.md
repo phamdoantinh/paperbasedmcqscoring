@@ -25,8 +25,6 @@ An automated optical scoring system for paper-based multiple-choice question (MC
   - [Running the Scoring Pipeline](#running-the-scoring-pipeline)
   - [Output Description](#output-description)
 - [Models](#models)
-- [Grading With Answer Key](#grading-with-answer-key)
-- [Configuration](#configuration)
 - [Dataset](#dataset)
 - [License](#license)
 
@@ -94,7 +92,6 @@ This specialization allows each model to be fine-tuned independently and retrain
 
 > 📄 **Full step-by-step guide → [`REPRODUCE.md`](REPRODUCE.md)**
 
-The following resources are **included in this repository** to allow direct reproduction of the reported results:
 
 | Resource                  | Path                                         | Description                                              |
 | ------------------------- | -------------------------------------------- | -------------------------------------------------------- |
@@ -245,6 +242,8 @@ paperbasedmcqscoring/
 ├── requirements.txt
 └── README.md
 ```
+├── REPRODUCE.md                        # Step-by-step reproducibility guide
+├── example_grading/                    # Zero-dependency grading demo
 
 ---
 
@@ -357,24 +356,6 @@ Each record is a single line with `|`-separated fields: zone type, filename, loc
 ---
 
 ## Grading With Answer Key
-
-After scoring, use the grading module to compare detected answers against the answer key and compute each student's score.
-
-📄 **Full instructions → [`grade_from_key/README.md`](grade_from_key/README.md)**
-
-**Quick start:**
-
-```bash
-# 1. Fill in the correct answers per exam set code
-nano grade_from_key/answer_key.json
-
-# 2. Run the grading script
-python grade_from_key/grade_from_key.py <exam_class_id>
-```
-
-Output is printed to the console and saved to `grade_from_key/grading_report.json`.
-
----
 
 ## Models
 
