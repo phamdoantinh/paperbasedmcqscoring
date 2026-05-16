@@ -22,8 +22,10 @@ An automated optical scoring system for paper-based multiple-choice question (MC
 - [Answer Sheet Template](#answer-sheet-template)
 - [Usage](#usage)
 - [Models](#models)
+- [Configuration](#configuration)
 - [Dataset](#dataset)
 - [Citation](#citation)
+- [License](#license)
 - [Contact](#contact)
 
 ---
@@ -223,6 +225,18 @@ The model was obtained by fine-tuning the publicly available **YOLOv8m** pretrai
 
 ---
 
+## Configuration
+
+Key parameters that can be adjusted directly in the source files:
+
+| Parameter           | Location                  | Default           | Description                                                           |
+| ------------------- | ------------------------- | ----------------- | --------------------------------------------------------------------- |
+| `threshold_warning` | `utils.py` (line 32)      | `0.79`            | Confidence threshold below which a prediction is flagged as uncertain |
+| `numberAnswer`      | `scoring.py` (line 245)   | `60`              | Number of questions per answer sheet (supported: `20`, `40`, `60`)    |
+| `pWeight`           | `scoring.py` (line 182)   | `./Model/best.pt` | Path to the unified YOLOv8 model weights                              |
+
+---
+
 ## Dataset
 
 The training and evaluation dataset for this system is publicly available on Zenodo:
@@ -253,6 +267,36 @@ This software is the implementation of the following peer-reviewed publication. 
   number    = {1},
   author    = {Pham Doan Tinh and Ta Quang Minh}
 }
+```
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.
+
+```
+MIT License
+
+Copyright (c) 2024 The Authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
 
 ---
