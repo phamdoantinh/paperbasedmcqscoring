@@ -92,14 +92,14 @@ This specialization allows each model to be fine-tuned independently and retrain
 
 > 📄 **Full step-by-step guide → [`REPRODUCE.md`](REPRODUCE.md)**
 
-| Resource                  | Path                                      | Description                                                |
-| ------------------------- | ----------------------------------------- | ---------------------------------------------------------- |
-| Pretrained model weights  | `Model/marker.pt`, `info.pt`, `answer.pt` | Three YOLOv11 models — **not included, download required** |
-| Sample answer sheets      | `images/demo1/`                           | 10 real scanned answer sheet images                        |
-| Example answer key        | `grade_from_key/answer_key.json`          | Correct answers for exam sets 101, 102, 568, 423           |
-| Expected scored output    | `images/demo1/ScoredSheets/`              | Pre-computed JSON result per sheet                         |
-| Expected grading report   | `grade_from_key/grading_report.json`      | Pre-computed grading report for `demo1`                    |
-| Grading demo (standalone) | `example_grading/`                        | Self-contained grading example — no model/images needed    |
+| Resource                  | Path                                      | Description                                                                                         |
+| ------------------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Weights                   | `Model/marker.pt`, `info.pt`, `answer.pt` | Three models — model pretrained yolov11m.pt [Yolov11m](https://docs.ultralytics.com/models/yolo11/) |
+| Sample answer sheets      | `images/demo1/`                           | 10 real scanned answer sheet images                                                                 |
+| Example answer key        | `grade_from_key/answer_key.json`          | Correct answers for exam sets 101, 102, 568, 423                                                    |
+| Expected scored output    | `images/demo1/ScoredSheets/`              | Pre-computed JSON result per sheet                                                                  |
+| Expected grading report   | `grade_from_key/grading_report.json`      | Pre-computed grading report for `demo1`                                                             |
+| Grading demo (standalone) | `example_grading/`                        | Self-contained grading example — no model/images needed                                             |
 
 **Option A — Test the grading module only (no model or images required):**
 
@@ -144,6 +144,7 @@ The answer key for all exam sets in `demo1` is pre-filled. Compare output with t
 | `scoring.py`                       | Main pipeline: marker detection, image alignment, info/answer prediction, output writing        |
 | `utils.py`                         | All utilities: geometry, perspective transform, angle calculation, class mapping, image helpers |
 | `grade_from_key/grade_from_key.py` | Standalone grading script: compare scored sheets against an answer key file                     |
+| `example_grading/`                 | Self-contained grading example — no model/images needed                                         |
 
 ---
 
@@ -212,10 +213,10 @@ Model/
 ```
 paperbasedmcqscoring/
 │
-├── Model/                          # Pre-trained YOLOv11 weights
-│   ├── marker.pt
-│   ├── info.pt
-│   └── answer.pt
+├── Model/                          # Model weights
+│   ├── marker.pt                   # Model for detect 4 marker
+│   ├── info.pt                     # Model for detect information of student
+│   └── answer.pt                   # Model for detect answer
 │
 ├── images/
 │   └── <exam_class_id>/            # One folder per exam session
@@ -357,8 +358,6 @@ If any detection has a confidence score below the threshold (`0.79` by default),
 Each record is a single line with `|`-separated fields: zone type, filename, location, predicted label, and confidence score.
 
 ---
-
-## Grading With Answer Key
 
 ## Models
 
