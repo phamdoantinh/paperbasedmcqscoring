@@ -92,15 +92,14 @@ This specialization allows each model to be fine-tuned independently and retrain
 
 > 📄 **Full step-by-step guide → [`REPRODUCE.md`](REPRODUCE.md)**
 
-
-| Resource                  | Path                                         | Description                                              |
-| ------------------------- | -------------------------------------------- | -------------------------------------------------------- |
-| Pretrained model weights  | `Model/marker.pt`, `info.pt`, `answer.pt` | Three YOLOv11 models — **not included, download required**|
-| Sample answer sheets      | `images/demo1/`                              | 10 real scanned answer sheet images                      |
-| Example answer key        | `grade_from_key/answer_key.json`             | Correct answers for exam sets 101, 102, 568, 423         |
-| Expected scored output    | `images/demo1/ScoredSheets/`                 | Pre-computed JSON result per sheet                       |
-| Expected grading report   | `grade_from_key/grading_report.json`         | Pre-computed grading report for `demo1`                  |
-| Grading demo (standalone) | `example_grading/`                           | Self-contained grading example — no model/images needed  |
+| Resource                  | Path                                      | Description                                                |
+| ------------------------- | ----------------------------------------- | ---------------------------------------------------------- |
+| Pretrained model weights  | `Model/marker.pt`, `info.pt`, `answer.pt` | Three YOLOv11 models — **not included, download required** |
+| Sample answer sheets      | `images/demo1/`                           | 10 real scanned answer sheet images                        |
+| Example answer key        | `grade_from_key/answer_key.json`          | Correct answers for exam sets 101, 102, 568, 423           |
+| Expected scored output    | `images/demo1/ScoredSheets/`              | Pre-computed JSON result per sheet                         |
+| Expected grading report   | `grade_from_key/grading_report.json`      | Pre-computed grading report for `demo1`                    |
+| Grading demo (standalone) | `example_grading/`                        | Self-contained grading example — no model/images needed    |
 
 **Option A — Test the grading module only (no model or images required):**
 
@@ -121,7 +120,6 @@ python3 grade_from_key/grade_from_key.py demo1
 The answer key for all exam sets in `demo1` is pre-filled. Compare output with the included `grade_from_key/grading_report.json` to verify correctness.
 
 ---
-
 
 ## Features
 
@@ -226,21 +224,29 @@ paperbasedmcqscoring/
 │       ├── ScoredSheets/           # (auto-created) JSON result files
 │       └── MayBeWrong/             # (auto-created) Low-confidence warning log
 │
-├── scoring.py                      # Main scoring pipeline
-├── utils.py                        # All utility functions
-├── grade_from_key/                 # Grading module
-│   ├── grade_from_key.py           # Script: compare scored sheets against answer key
-│   ├── answer_key.json             # Answer key (fill in correct answers per exam set)
-│   └── grading_report.json         # (auto-generated) Grading output report
-├── docs/                           # Documentation assets
-│   ├── AnswerSheetTemplate.pdf     # Printable answer sheet template
-│   ├── AnswerSheetTemplate.png     # Answer sheet template image
-│   └── StructureDiagram.png        # System architecture diagram
+├── scoring.py                          # Main scoring pipeline
+├── utils.py                            # All utility functions
+├── grade_from_key/
+│   ├── grade_from_key.py               # Grading script
+│   ├── answer_key.json                 # Answer key (pre-filled for demo1)
+│   └── grading_report.json             # Expected output (auto-generated)
+├── docs/                               # Documentation assets
+│   ├── AnswerSheetTemplate.pdf         # Printable answer sheet template
+│   ├── AnswerSheetTemplate.png
+│   └── StructureDiagram.png
+├── REPRODUCE.md                        # Step-by-step reproducibility guide
+├── example_grading/                    # Zero-dependency grading demo
+│   ├── run_grading.py                  # Demo execution script
+│   ├── answer_key.json                 # Sample answer key for demo
+│   ├── expected_output.json            # Reference report for verification
+│   ├── grading_output.json             # (auto-created) Demo output report
+│   └── scored_sheets/                  # Pre-scored JSON data files
 ├── requirements.txt
 └── README.md
 ```
-├── REPRODUCE.md                        # Step-by-step reproducibility guide
-├── example_grading/                    # Zero-dependency grading demo
+
+├── REPRODUCE.md # Step-by-step reproducibility guide
+├── example_grading/ # Zero-dependency grading demo
 
 ---
 
