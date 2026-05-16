@@ -16,7 +16,7 @@ Usage
   Example:
       python3 grade_from_key/grade_from_key.py demo2
 
-  Reads  : images/answer_sheets/<exam_class_id>/ScoredSheets/  (project root)
+  Reads  : images/<exam_class_id>/ScoredSheets/  (project root)
   Key    : grade_from_key/answer_key.json
   Output : grade_from_key/grading_report.json
 
@@ -116,17 +116,17 @@ def grade_sheet(sheet: dict, key_cfg: dict) -> dict:
 
     # Look up key for this exam set
     keys_map = key_cfg.get("keys", {})
-    if exam_code not in keys_map:
+    if class_code not in keys_map or exam_code not in keys_map[class_code]:
         return {
             "student_code":  student_code,
             "class_code":    class_code,
             "exam_code":     exam_code,
-            "error":         f"No answer key found for exam code '{exam_code}'",
+            "error":         f"No answer key found for exam code '{exam_code}' in class '{class_code}'",
             "score":         None,
             "source_file":   sheet.get("_source_file", ""),
         }
 
-    correct_answers = keys_map[exam_code]   # list of strings, length = total_q
+    correct_answers = keys_map[class_code][exam_code]   # list of strings, length = total_q
 
     # Build answer lookup from sheet
     student_answers = {a["questionNo"]: a["selectedAnswers"]
@@ -250,10 +250,10 @@ def main():
     parser.add_argument("exam_class_id",
                         help="Exam class folder name (e.g. demo2). "
                              "Scored sheets are read from "
-                             "images/answer_sheets/<exam_class_id>/ScoredSheets/")
+                             "images/<exam_class_id>/ScoredSheets/")
     args = parser.parse_args()
 
-    scored_dir = PROJECT_ROOT / "images" / "answer_sheets" / args.exam_class_id / "ScoredSheets"
+    scored_dir = PROJECT_ROOT / "images" / args.exam_class_id / "ScoredSheets"
     key_path   = Path(__file__).resolve().parent / "answer_key.json"
     out_path   = Path(__file__).resolve().parent / "grading_report.json"
 
@@ -270,7 +270,7 @@ def main():
     sheets  = load_scored_sheets(scored_dir)
     print(f"[INFO] Exam class   : {args.exam_class_id}")
     print(f"[INFO] Answer key   : {key_path}  "
-          f"(exam sets: {list(key_cfg.get('keys', {}).keys())})")
+          f"(exam classes: {list(key_cfg.get('keys', {}).keys())})")
     print(f"[INFO] Scored sheets: {len(sheets)} file(s) from {scored_dir}")
 
     # Grade
@@ -284,7 +284,6 @@ def main():
         "exam_class_id": args.exam_class_id,
         "exam_name":     key_cfg.get("exam_name", ""),
         "subject":       key_cfg.get("subject", ""),
-        "scoring_rule":  "exact_match_only",
         "total_score":   key_cfg.get("total_score", 10),
         "results":       results,
     }

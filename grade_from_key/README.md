@@ -30,7 +30,7 @@ python3 grade_from_key/grade_from_key.py demo2
 
 The script automatically:
 
-- Reads scored sheets from `images/answer_sheets/demo2/ScoredSheets/`
+- Reads scored sheets from `images/demo2/ScoredSheets/`
 - Loads the answer key from `grade_from_key/answer_key.json`
 - Saves the report to `grade_from_key/grading_report.json`
 
@@ -70,7 +70,7 @@ Open `answer_key.json` and fill in the correct answers for each exam set code (`
 | `"A"`    | Single answer                                        |
 | `"AB"`   | Multiple answers (letters in any order are accepted) |
 | `"ABCD"` | All four options                                     |
-| `"x"`    | Question intentionally left blank in the key         |
+| `""`     | Question intentionally left blank in the key         |
 
 > **Note:** Letter order does not matter — `"BA"` and `"AB"` are treated as equal.
 
@@ -84,7 +84,19 @@ Make sure the answer sheets have been processed and scored:
 python3 scoring.py <exam_class_id>
 ```
 
-This creates `images/answer_sheets/<exam_class_id>/ScoredSheets/` with one `*_data.json` per sheet.
+In this case, run command
+
+```bash
+python3 scoring.py demo1
+```
+
+or
+
+```bash
+python3 scoring.py demo2
+```
+
+This creates `images/<exam_class_id>/ScoredSheets/` with one `*_data.json` per sheet.
 
 ---
 

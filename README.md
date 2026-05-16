@@ -90,6 +90,42 @@ This specialization allows each model to be fine-tuned independently and retrain
 
 ---
 
+## Reproducibility
+
+> 📄 **Full step-by-step guide → [`REPRODUCE.md`](REPRODUCE.md)**
+
+The following resources are **included in this repository** to allow direct reproduction of the reported results:
+
+| Resource                  | Path                                         | Description                                              |
+| ------------------------- | -------------------------------------------- | -------------------------------------------------------- |
+| Pretrained model weights  | `Model/marker.pt`, `info.pt`, `answer.pt` | Three YOLOv11 models — **not included, download required**|
+| Sample answer sheets      | `images/demo1/`                              | 10 real scanned answer sheet images                      |
+| Example answer key        | `grade_from_key/answer_key.json`             | Correct answers for exam sets 101, 102, 568, 423         |
+| Expected scored output    | `images/demo1/ScoredSheets/`                 | Pre-computed JSON result per sheet                       |
+| Expected grading report   | `grade_from_key/grading_report.json`         | Pre-computed grading report for `demo1`                  |
+| Grading demo (standalone) | `example_grading/`                           | Self-contained grading example — no model/images needed  |
+
+**Option A — Test the grading module only (no model or images required):**
+
+```bash
+python3 example_grading/run_grading.py
+```
+
+Uses pre-scored JSON files already in `example_grading/scored_sheets/` and auto-verifies against `example_grading/expected_output.json`. Only Python standard library needed.
+
+**Option B — Full pipeline (scoring + grading):**
+
+```bash
+pip install -r requirements.txt && pip install ultralytics
+python3 scoring.py demo1
+python3 grade_from_key/grade_from_key.py demo1
+```
+
+The answer key for all exam sets in `demo1` is pre-filled. Compare output with the included `grade_from_key/grading_report.json` to verify correctness.
+
+---
+
+
 ## Features
 
 - ✅ Automatic perspective correction using marker-based homography
@@ -230,10 +266,10 @@ The file `docs/AnswerSheetTemplate.pdf` is the official printable template that 
 
 ### Preparing Input Images
 
-1. Create a folder named after the **exam class ID** inside `images/answer_sheets/`:
+1. Create a folder named after the **exam class ID** inside `images/`:
 
 ```bash
-mkdir -p images/answer_sheets/<exam_class_id>
+mkdir -p images/<exam_class_id>
 ```
 
 2. Place all scanned or photographed answer sheet images (`.jpg`, `.jpeg`, or `.png`) inside that folder.
@@ -260,7 +296,7 @@ python scoring.py <exam_class_id>
 python scoring.py demo1
 ```
 
-This will process all images inside `images/answer_sheets/demo1/` and write results to the automatically created subdirectories.
+This will process all images inside `images/demo1/` and write results to the automatically created subdirectories.
 
 ---
 
@@ -282,8 +318,8 @@ For each successfully processed answer sheet image (e.g., `1.jpg`), the system p
     ...
     { "questionNo": 60, "selectedAnswers": "D" }
   ],
-  "handledScoredImg": "images/answer_sheets/demo1/HandledSheets/handled_1.jpg",
-  "originalImg": "images/answer_sheets/demo1/1.jpg",
+  "handledScoredImg": "images/demo1/HandledSheets/handled_1.jpg",
+  "originalImg": "images/demo1/1.jpg",
   "originalImgFileName": "1.jpg"
 }
 ```

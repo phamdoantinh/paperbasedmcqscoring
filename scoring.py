@@ -190,10 +190,10 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # ================= Create folders for original and processed images ===============================
-    folder_path = f"images/answer_sheets/{args.input}"
-    folder_path_handle = f"images/answer_sheets/{args.input}/HandledSheets"
-    folder_scored_path = f"images/answer_sheets/{args.input}/ScoredSheets"
-    folder_maybe_wrong = f"images/answer_sheets/{args.input}/MayBeWrong"
+    folder_path = f"images/{args.input}"
+    folder_path_handle = f"images/{args.input}/HandledSheets"
+    folder_scored_path = f"images/{args.input}/ScoredSheets"
+    folder_maybe_wrong = f"images/{args.input}/MayBeWrong"
     if os.path.exists(folder_maybe_wrong):
         shutil.rmtree(folder_maybe_wrong)
     if not os.path.exists(folder_path):
