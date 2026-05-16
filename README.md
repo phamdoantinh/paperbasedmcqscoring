@@ -14,37 +14,55 @@ An automated optical scoring system for paper-based multiple-choice question (MC
 
 ## Table of Contents
 
-- [Overview](#overview)
+- [Reproducibility](#reproducibility)
 - [Features](#features)
 - [System Architecture](#system-architecture)
-- [Requirements](#requirements)
-- [Installation](#installation)
+- [Requirements & Installation](#requirements--installation)
 - [Directory Structure](#directory-structure)
 - [Answer Sheet Template](#answer-sheet-template)
 - [Usage](#usage)
-  - [Preparing Input Images](#preparing-input-images)
-  - [Running the Scoring Pipeline](#running-the-scoring-pipeline)
-  - [Output Description](#output-description)
 - [Models](#models)
 - [Grading With Answer Key](#grading-with-answer-key)
-- [Configuration](#configuration)
 - [Dataset](#dataset)
 - [Citation](#citation)
 - [Contact](#contact)
 
 ---
 
-## Overview
+## Reproducibility
 
-This system automates the grading of paper-based MCQ exams. Given a folder of answer sheet images (JPEG or PNG), it:
+> 📄 **Full step-by-step guide → [`REPRODUCE.md`](REPRODUCE.md)**
 
-1. **Detects alignment markers** on the answer sheet to correct skew and perspective.
-2. **Extracts student information** (class code, student code, exam/test-set code) from the information zone.
-3. **Recognizes selected answers** for each question (supporting up to 60 questions per sheet with multi-answer combinations A, B, C, D, AB, AC, …, ABCD).
-4. **Writes annotated output images** and structured **JSON result files** per answer sheet.
-5. **Logs potentially uncertain predictions** (low-confidence detections) to a warning file.
+The following resources are **included in this repository** to allow direct reproduction of the reported results:
 
-A single YOLOv8 model (`best.pt`) trained on all 29 classes handles all three detection tasks: markers, student info digits, and answer bubbles. The pipeline is designed for integration with an e-learning support platform but can also be used as a standalone batch-processing tool.
+| Resource                  | Path                                         | Description                                              |
+| ------------------------- | -------------------------------------------- | -------------------------------------------------------- |
+| Pretrained model weights  | `Model/best.pt`                              | Fine-tuned YOLOv8m detector (~52 MB) — **included**      |
+| Sample answer sheets      | `images/demo1/`                              | 10 real scanned answer sheet images                      |
+| Example answer key        | `grade_from_key/answer_key.json`             | Correct answers for exam sets 101, 102, 568, 423         |
+| Expected scored output    | `images/demo1/ScoredSheets/`                 | Pre-computed JSON result per sheet                       |
+| Expected grading report   | `grade_from_key/grading_report.json`         | Pre-computed grading report for `demo1`                  |
+| Grading demo (standalone) | `example_grading/`                           | Self-contained grading example — no model/images needed  |
+
+📄 **Step-by-step guide → [`REPRODUCE.md`](REPRODUCE.md)**
+
+**Option A — Test the grading module only (no model or images required):**
+
+```bash
+python3 example_grading/run_grading.py
+```
+
+Uses pre-scored JSON files already in `example_grading/scored_sheets/` and auto-verifies against `example_grading/expected_output.json`. Only Python standard library needed.
+
+**Option B — Full pipeline (scoring + grading):**
+
+```bash
+pip install -r requirements.txt && pip install ultralytics
+python3 scoring.py demo1
+python3 grade_from_key/grade_from_key.py demo1
+```
+
+The answer key for all exam sets in `demo1` is pre-filled. Compare output with the included `grade_from_key/grading_report.json` to verify correctness.
 
 ---
 
@@ -63,37 +81,6 @@ A single YOLOv8 model (`best.pt`) trained on all 29 classes handles all three de
 
 ## System Architecture
 
-```
-Input image (JPG/PNG)
-        │
-        ▼
-┌──────────────────────────┐
-│   Marker Detection       │  ← best.pt  (classes: marker1, marker2)
-│   & Image Alignment      │    Detect 4 markers → calculate rotation angle
-│   (get_marker)           │    → warpAffine → warpPerspective → crop doc
-└───────────┬──────────────┘
-            │  Corrected & cropped document  (resized to 1056 × 1500 px)
-            ▼
-┌──────────────────────────┐      ┌────────────────────────────┐
-│  Info Zone Crop          │ ───► │  Info Recognition          │  ← best.pt
-│  x: 500–1006, y: 0–500   │      │  (predictInfo)             │  (classes: 0–9, x)
-│  → resize to 640 × 640   │      │  → class_code, student_code│
-└──────────────────────────┘      │     exam_code              │
-                                  └─────────────┬──────────────┘
-                                                │
-┌──────────────────────────┐      ┌─────────────▼──────────────┐
-│  Answer Column Crops     │ ───► │  Answer Recognition        │  ← best.pt
-│  3 columns at x=30,350,  │      │  (predictAnswer)           │  (classes: unchoice,
-│  660; y=480; 350×896 px  │      │  → per-question answer     │        A–ABCD)
-│  → resize to 250 × 640   │      │     array                  │
-└──────────────────────────┘      └─────────────┬──────────────┘
-                                                │
-                               ┌────────────────▼───────────────┐
-                               │  JSON Output +                 │
-                               │  Annotated Image (mergeImages) │
-                               └────────────────────────────────┘
-```
-
 ![System Flow](docs/StructureDiagram.png)
 
 **Key modules:**
@@ -106,10 +93,9 @@ Input image (JPG/PNG)
 
 ---
 
-## Requirements
+## Requirements & Installation
 
 - Python **3.8** or higher
-- The following Python packages (see also `requirements.txt`):
 
 | Package                  | Version  | Purpose                |
 | ------------------------ | -------- | ---------------------- |
@@ -119,50 +105,21 @@ Input image (JPG/PNG)
 
 > **Note:** `Flask` and `uwsgi` are commented out in `requirements.txt`. They are only needed if you plan to deploy the system as a REST API web service.
 
----
-
-## Installation
-
-### 1. Clone the repository
+### Install
 
 ```bash
-git clone https://github.com/<your-username>/paperbasedmcqscoring.git
+git clone https://github.com/phamdoantinh/paperbasedmcqscoring.git
 cd paperbasedmcqscoring
-```
 
-### 2. (Optional) Create a virtual environment
+# (Optional) Create a virtual environment
+python -m venv venv && source venv/bin/activate   # Linux/macOS
+# venv\Scripts\activate                            # Windows
 
-Using a virtual environment is not required, but it is recommended to avoid conflicts with other packages already installed on your machine.
-
-```bash
-python -m venv venv
-
-# On Linux/macOS:
-source venv/bin/activate
-
-# On Windows:
-venv\Scripts\activate
-```
-
-> You can skip this step and install dependencies directly into your system Python if preferred.
-
-### 3. Install dependencies
-
-```bash
 pip install -r requirements.txt
 pip install ultralytics numpy
 ```
 
-### 4. Verify the model file
-
-Ensure the single YOLOv8 model weight file is present in the `Model/` directory:
-
-```
-Model/
-└── best.pt      # Unified YOLOv8 detector (all 29 classes)
-```
-
-> The model file is **not** included in this repository due to its size. Please contact the authors or download it from the provided release assets.
+The model weight file `Model/best.pt` is included in the repository and requires no separate download.
 
 ---
 
@@ -175,25 +132,24 @@ paperbasedmcqscoring/
 │   └── best.pt                         # Pre-trained YOLOv8 weights (all tasks)
 │
 ├── images/
-│   └── answer_sheets/
-│       └── <exam_class_id>/            # One folder per exam session
-│           ├── 1.jpg                   # Input answer sheet images
-│           ├── 2.jpg
-│           ├── ...
-│           ├── HandledSheets/          # (auto-created) Annotated output images
-│           ├── ScoredSheets/           # (auto-created) JSON result files
-│           └── MayBeWrong/             # (auto-created) Low-confidence warning log
+│   ├── demo1/                              # One folder per exam session
+│   │   ├── 1.jpg                   # Input answer sheet images
+│   │   ├── HandledSheets/          # (auto-created) Annotated output images
+│   │   ├── ScoredSheets/           # (auto-created) JSON result files
+│   │   └── MayBeWrong/             # (auto-created) Low-confidence warning log
+│   └── demo2/
 │
 ├── scoring.py                          # Main scoring pipeline
-├── utils.py                            # All utility functions (geometry, labels, image helpers)
-├── grade_from_key/                     # Grading module
-│   ├── grade_from_key.py               # Script: compare scored sheets against answer key
-│   ├── answer_key.json                 # Answer key (fill in correct answers per exam set)
-│   └── grading_report.json             # (auto-generated) Grading output report
+├── utils.py                            # All utility functions
+├── grade_from_key/
+│   ├── grade_from_key.py               # Grading script
+│   ├── answer_key.json                 # Answer key (pre-filled for demo1)
+│   └── grading_report.json             # Expected output (auto-generated)
 ├── docs/                               # Documentation assets
 │   ├── AnswerSheetTemplate.pdf         # Printable answer sheet template
-│   ├── AnswerSheetTemplate.png         # Answer sheet template image
-│   └── StructureDiagram.png            # System architecture diagram
+│   ├── AnswerSheetTemplate.png
+│   └── StructureDiagram.png
+├── REPRODUCE.md                        # Step-by-step reproducibility guide
 ├── requirements.txt
 └── README.md
 ```
@@ -204,15 +160,9 @@ paperbasedmcqscoring/
 
 The file `docs/AnswerSheetTemplate.pdf` is the official printable template that this system is designed to process. Print it on **A4 paper** before scanning or photographing.
 
-### Layout Overview
-
 ![Answer Sheet Template](docs/AnswerSheetTemplate.png)
 
-### Printing Notes
-
-- Print at **100% scale** on **A4 (210 × 297 mm)** — do **not** scale to fit
-- Use a **laser printer** for best marker contrast
-- Ensure all 4 alignment markers are fully printed and not clipped by the page margin
+**Printing notes:** Print at **100% scale** on **A4 (210 × 297 mm)** — do **not** scale to fit. Use a laser printer for best marker contrast. Ensure all 4 alignment markers are fully printed and not clipped.
 
 ---
 
@@ -220,25 +170,17 @@ The file `docs/AnswerSheetTemplate.pdf` is the official printable template that 
 
 ### Preparing Input Images
 
-1. Create a folder named after the **exam class ID** inside `images/answer_sheets/`:
+1. Create a folder named after the **exam class ID** inside `images/`:
 
 ```bash
-mkdir -p images/answer_sheets/<exam_class_id>
+mkdir -p images/<exam_class_id>
 ```
 
 2. Place all scanned or photographed answer sheet images (`.jpg`, `.jpeg`, or `.png`) inside that folder.
 
-**Image requirements:**
-
-- The answer sheet must contain **4 alignment markers**: 3 × `marker1` (at top-left, top-right, bottom-left) and 1 × `marker2` (at bottom-right).
-- Recommended image resolution: **≥ 1056 × 1500 px**.
-- Supported formats: `JPEG`, `PNG`.
-
----
+**Image requirements:** ≥ 1056 × 1500 px resolution recommended. The sheet must contain all 4 alignment markers.
 
 ### Running the Scoring Pipeline
-
-Run the main script from the project root, passing the exam class folder name as the argument:
 
 ```bash
 python3 scoring.py <exam_class_id>
@@ -247,66 +189,34 @@ python3 scoring.py <exam_class_id>
 **Example:**
 
 ```bash
-python3 scoring.py demo2
+python3 scoring.py demo1
 ```
 
-This will process all images inside `images/answer_sheets/demo2/` and write results to the automatically created subdirectories.
+### Output
+
+For each processed sheet (e.g., `demo1.jpg`), the system produces:
+
+- **`ScoredSheets/demo1_data.json`** — structured JSON with student code, exam code, and all 60 answers
+- **`HandledSheets/handled_demo1.jpg`** — annotated image (🟢 green = high confidence, 🟠 orange = low confidence)
+- **`MayBeWrong/maybe_wrong.txt`** — log of low-confidence predictions (threshold: 0.79)
 
 ---
 
-### Output Description
+## Models
 
-For each successfully processed answer sheet image (e.g., `1.jpg`), the system produces:
+This branch uses a **single unified YOLOv8 model** (`best.pt`) trained on all 29 classes across three detection tasks simultaneously: alignment markers, student info digits, and answer bubbles.
 
-#### 1. JSON Result File — `ScoredSheets/<filename>_data.json`
+The model was obtained by fine-tuning the publicly available **YOLOv8m** pretrained weights (`yolov8m.pt`) from [Ultralytics](https://github.com/ultralytics/ultralytics) on our custom dataset of Vietnamese university MCQ answer sheets. The training dataset is publicly available on Zenodo (see [Dataset](#https://doi.org/10.5281/zenodo.18816315)).
 
-```json
-{
-  "examClassCode": "demo2",
-  "studentCode": "026983557",
-  "testSetCode": "014",
-  "answers": [
-    { "questionNo": 1, "selectedAnswers": "A" },
-    { "questionNo": 2, "selectedAnswers": "BC" },
-    { "questionNo": 3, "selectedAnswers": "x" },
-    ...
-    { "questionNo": 60, "selectedAnswers": "D" }
-  ],
-  "handledScoredImg": "images/answer_sheets/demo2/HandledSheets/handled_1.jpg",
-  "originalImg": "images/answer_sheets/demo2/1.jpg",
-  "originalImgFileName": "1.jpg"
-}
-```
+| Class index | Class label            | Task             |
+| ----------- | ---------------------- | ---------------- |
+| 0–15        | `0000`–`1111` (binary) | Answer bubble    |
+| 16–25       | `0`–`9`                | Info digit       |
+| 26          | `unchoice`             | Info: blank cell |
+| 27          | `marker1`              | Alignment marker |
+| 28          | `marker2`              | Alignment marker |
 
-| Field                       | Type      | Description                                                                                                |
-| --------------------------- | --------- | ---------------------------------------------------------------------------------------------------------- |
-| `examClassCode`             | `string`  | Detected class/course code from the info zone                                                              |
-| `studentCode`               | `string`  | Detected student ID number                                                                                 |
-| `testSetCode`               | `string`  | Detected test/exam set code (3 digits)                                                                     |
-| `answers`                   | `array`   | List of per-question answer objects                                                                        |
-| `answers[].questionNo`      | `integer` | Question number (1-indexed)                                                                                |
-| `answers[].selectedAnswers` | `string`  | Selected answer(s): `"A"`, `"B"`, `"C"`, `"D"`, combinations like `"AB"`, `"BCD"`, or `"x"` for unanswered |
-| `handledScoredImg`          | `string`  | Path to the annotated output image                                                                         |
-| `originalImg`               | `string`  | Path to the original input image                                                                           |
-| `originalImgFileName`       | `string`  | File name of the original input image                                                                      |
-
-#### 2. Annotated Image — `HandledSheets/handled_<filename>.<ext>`
-
-A copy of the answer sheet with colored bounding boxes drawn over detected answers:
-
-- 🟢 **Green box**: high-confidence prediction (conf ≥ 0.79)
-- 🟠 **Orange box**: low-confidence prediction (also logged to warning file)
-
-#### 3. Warning Log — `MayBeWrong/maybe_wrong.txt`
-
-If any detection has a confidence score below the threshold (`0.79` by default), one line per warning is written:
-
-```
-[LOW CONF] Answer zone | File: t2.jpg | Question 5 | Predicted: "A" | Conf: 0.71
-[LOW CONF] Info zone   | File: t2.jpg | Column 4 (left→right) | Predicted: "x" | Conf: 0.68
-```
-
-Each record is a single line with `|`-separated fields: zone type, filename, location, predicted label, and confidence score.
+> For the newer implementation with three specialized YOLOv11 models, see the [`yolov11-version`](../../tree/yolov11-version) branch.
 
 ---
 
@@ -316,10 +226,8 @@ After scoring, use the grading module to compare detected answers against the an
 
 📄 **Full instructions → [`grade_from_key/README.md`](grade_from_key/README.md)**
 
-**Quick start:**
-
 ```bash
-# 1. Fill in the correct answers per exam set code
+# 1. (Optional) Edit the correct answers per exam set code
 nano grade_from_key/answer_key.json
 
 # 2. Run the grading script
@@ -327,69 +235,6 @@ python3 grade_from_key/grade_from_key.py <exam_class_id>
 ```
 
 Output is printed to the console and saved to `grade_from_key/grading_report.json`.
-
----
-
-## Models
-
-This branch uses a **single unified YOLOv8 model** (`best.pt`) trained on all 29 classes across three detection tasks simultaneously:
-
-| Class index | Class label | Task             |
-| ----------- | ----------- | ---------------- |
-| 0           | `0000`      | Answer bubble    |
-| 1           | `1000`      | Answer bubble    |
-| 2           | `0100`      | Answer bubble    |
-| 3           | `0010`      | Answer bubble    |
-| 4           | `0001`      | Answer bubble    |
-| 5           | `1100`      | Answer bubble    |
-| 6           | `1010`      | Answer bubble    |
-| 7           | `1001`      | Answer bubble    |
-| 8           | `0110`      | Answer bubble    |
-| 9           | `0101`      | Answer bubble    |
-| 10          | `0011`      | Answer bubble    |
-| 11          | `1110`      | Answer bubble    |
-| 12          | `1101`      | Answer bubble    |
-| 13          | `1011`      | Answer bubble    |
-| 14          | `0111`      | Answer bubble    |
-| 15          | `1111`      | Answer bubble    |
-| 16          | `0`         | Info digit       |
-| 17          | `1`         | Info digit       |
-| 18          | `2`         | Info digit       |
-| 19          | `3`         | Info digit       |
-| 20          | `4`         | Info digit       |
-| 21          | `5`         | Info digit       |
-| 22          | `6`         | Info digit       |
-| 23          | `7`         | Info digit       |
-| 24          | `8`         | Info digit       |
-| 25          | `9`         | Info digit       |
-| 26          | `unchoice`  | Info: blank cell |
-| 27          | `marker1`   | Alignment marker |
-| 28          | `marker2`   | Alignment marker |
-
-The model is a custom-trained **YOLOv8** detector on a dataset of Vietnamese university MCQ answer sheets. The training methodology is described in the published paper (see [Citation](#citation)).
-
-> For the newer implementation with three specialized YOLOv11 models, see the [`yolov11-version`](../../tree/yolov11-version) branch.
-
----
-
-## Configuration
-
-Key parameters that can be adjusted directly in the source files:
-
-| Parameter           | Location     | Default           | Description                                                           |
-| ------------------- | ------------ | ----------------- | --------------------------------------------------------------------- |
-| `threshold_warning` | `utils.py`   | `0.79`            | Confidence threshold below which a prediction is flagged as uncertain |
-| `numberAnswer`      | `scoring.py` | `60`              | Number of questions per answer sheet (supported: `20`, `40`, `60`)    |
-| `pWeight`           | `scoring.py` | `./Model/best.pt` | Path to the unified YOLOv8 model                                      |
-
-**Image crop coordinates** (fixed for the standard answer sheet layout, defined in `utils.py`):
-
-| Region          | x range  | y range  | Resized to |
-| --------------- | -------- | -------- | ---------- |
-| Info zone       | 500–1006 | 0–500    | 640 × 640  |
-| Answer column 1 | 30–380   | 480–1376 | 250 × 640  |
-| Answer column 2 | 350–700  | 480–1376 | 250 × 640  |
-| Answer column 3 | 660–1010 | 480–1376 | 250 × 640  |
 
 ---
 

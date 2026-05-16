@@ -459,7 +459,7 @@ def mergeImages(filename, coord_array, array_img_graft, background_image, imgInf
         h, w, _ = array_img_graft[i].shape
         background_image[y_coord:y_coord + h, x_coord:x_coord + w] = array_img_graft[i] / 255
     handled_path = (
-        f"images/answer_sheets/{args.input}/HandledSheets/"
+        f"images/{args.input}/HandledSheets/"
         f"handled_{filename_cut}.{file_extension}"
     )
     cv2.imwrite(handled_path, background_image * 255)
