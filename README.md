@@ -148,6 +148,11 @@ paperbasedmcqscoring/
 │   └── StructureDiagram.png
 ├── REPRODUCE.md                        # Step-by-step reproducibility guide
 ├── example_grading/                    # Zero-dependency grading demo
+│   ├── run_grading.py                  # Demo execution script
+│   ├── answer_key.json                 # Sample answer key for demo
+│   ├── expected_output.json            # Reference report for verification
+│   ├── grading_output.json             # (auto-created) Demo output report
+│   └── scored_sheets/                  # Pre-scored JSON data files
 ├── requirements.txt
 └── README.md
 ```
