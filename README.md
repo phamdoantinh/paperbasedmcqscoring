@@ -14,12 +14,12 @@ An automated optical scoring system for paper-based multiple-choice question (MC
 
 ## Table of Contents
 
+- [Feature & Overview](#feature-overview)
 - [Reproducibility](#reproducibility)
-- [Features](#features)
 - [System Architecture](#system-architecture)
-- [Requirements & Installation](#requirements--installation)
 - [Directory Structure](#directory-structure)
 - [Answer Sheet Template](#answer-sheet-template)
+- [Requirements & Installation](#requirements--installation)
 - [Usage](#usage)
 - [Models](#models)
 - [Configuration](#configuration)
@@ -30,20 +30,32 @@ An automated optical scoring system for paper-based multiple-choice question (MC
 
 ---
 
+## Features & Overview
+
+This system automates the grading of paper-based MCQ exams. Given a folder of answer sheet images (JPEG or PNG), it provides the following capabilities:
+
+- ✅ **Perspective Correction**: Automatic skew and perspective correction using marker-based homography.
+- ✅ **Student Info OCR**: Automatically extracts class code, student ID, and test-set code from the info zone.
+- ✅ **Flexible Grading**: Supports 20, 40, and 60 question answer sheets with single and multi-answer (A, B, C, D combinations) recognition.
+- ✅ **Comprehensive Output**: Generates annotated images highlighting detected answers and structured JSON result files.
+- ✅ **Quality Assurance**: Logs potentially uncertain predictions (low-confidence detections) to a warning file for verification.
+- ✅ **Standalone or Integrated**: Suitable for batch processing or integration with e-learning support platforms.
+
+---
+
 ## Reproducibility
 
 > 📄 **Full step-by-step guide → [`REPRODUCE.md`](REPRODUCE.md)**
 
 The following resources are **included in this repository** to allow direct reproduction of the reported results:
 
-| Resource                  | Path                                 | Description                                             |
-| ------------------------- | ------------------------------------ | ------------------------------------------------------- |
-| Pretrained model weights  | `Model/best.pt`                      | Fine-tuned YOLOv8m detector (~52 MB) — **included**     |
-| Sample answer sheets      | `images/demo1/`                      | 10 real scanned answer sheet images                     |
-| Example answer key        | `grade_from_key/answer_key.json`     | Correct answers for exam sets 101, 102, 568, 423        |
-| Expected scored output    | `images/demo1/ScoredSheets/`         | Pre-computed JSON result per sheet                      |
-| Expected grading report   | `grade_from_key/grading_report.json` | Pre-computed grading report for `demo1`                 |
-| Grading demo (standalone) | `example_grading/`                   | Self-contained grading example — no model/images needed |
+| Resource                  | Path                         | Description                                             |
+| ------------------------- | ---------------------------- | ------------------------------------------------------- |
+| Pretrained model weights  | `Model/best.pt`              | Fine-tuned YOLOv8m detector (~52 MB) — **included**     |
+| Sample answer sheets      | `images/demo1/`              | 10 real scanned answer sheet images                     |
+| Sample grading data       | `grade_from_key/`            | Answer key and expected grading report for `demo1`      |
+| Expected scored output    | `images/demo1/ScoredSheets/` | Pre-computed JSON result per sheet                      |
+| Grading demo (standalone) | `example_grading/`           | Self-contained grading example — no model/images needed |
 
 **Option A — Test the grading module only (no model or images required):**
 
@@ -65,19 +77,6 @@ The answer key for all exam sets in `demo1` is pre-filled. Compare output with t
 
 ---
 
-## Features
-
-- ✅ Automatic skew correction using marker-based perspective transform
-- ✅ Single unified YOLOv8 model covers all detection tasks
-- ✅ Supports 20, 40, and 60 question answer sheets
-- ✅ Multi-answer recognition (single and combination choices: AB, AC, AD, BC, BD, CD, ABC, ABD, ACD, BCD, ABCD)
-- ✅ Student information zone OCR (class code, student ID, test-set code)
-- ✅ Confidence-based warning system for low-certainty predictions
-- ✅ JSON output format for easy downstream integration
-- ✅ Annotated output images highlighting detected answers
-
----
-
 ## System Architecture
 
 ![System Flow](docs/StructureDiagram.png)
@@ -89,36 +88,7 @@ The answer key for all exam sets in `demo1` is pre-filled. Compare output with t
 | `scoring.py`                       | Main pipeline: marker detection, image alignment, info/answer prediction, output writing        |
 | `utils.py`                         | All utilities: geometry, perspective transform, angle calculation, class mapping, image helpers |
 | `grade_from_key/grade_from_key.py` | Standalone grading script: compare scored sheets against an answer key file                     |
-
----
-
-## Requirements & Installation
-
-- Python **3.8** or higher
-
-| Package                  | Version  | Purpose                |
-| ------------------------ | -------- | ---------------------- |
-| `opencv-python-headless` | 4.9.0.80 | Image processing       |
-| `ultralytics`            | ≥ 8.0    | YOLOv8 model inference |
-| `numpy`                  | ≥ 1.21   | Numerical operations   |
-
-> **Note:** `Flask` and `uwsgi` are commented out in `requirements.txt`. They are only needed if you plan to deploy the system as a REST API web service.
-
-### Install
-
-```bash
-git clone https://github.com/phamdoantinh/paperbasedmcqscoring.git
-cd paperbasedmcqscoring
-
-# (Optional) Create a virtual environment
-python -m venv venv && source venv/bin/activate   # Linux/macOS
-# venv\Scripts\activate                            # Windows
-
-pip install -r requirements.txt
-pip install ultralytics numpy
-```
-
-The model weight file `Model/best.pt` is included in the repository and requires no separate download.
+| `example_grading/run_grading.py`   | Example script to show how to use the `grade_from_key` module                                   |
 
 ---
 
@@ -128,7 +98,7 @@ The model weight file `Model/best.pt` is included in the repository and requires
 paperbasedmcqscoring/
 │
 ├── Model/
-│   └── best.pt                         # Pre-trained YOLOv8 weights (all tasks)
+│   └── best.pt                         # Weights of model (all tasks)
 │
 ├── images/
 │   ├── demo1/                              # One folder per exam session
@@ -165,9 +135,39 @@ paperbasedmcqscoring/
 
 The file `docs/AnswerSheetTemplate.pdf` is the official printable template that this system is designed to process. Print it on **A4 paper** before scanning or photographing.
 
-![Answer Sheet Template](docs/AnswerSheetTemplate.png)
+<img src="docs/AnswerSheetTemplate.png" alt="Answer Sheet Template" width="50%" align="center" style="display: block; margin-left: auto; margin-right: auto;">
 
 **Printing notes:** Print at **100% scale** on **A4 (210 × 297 mm)** — do **not** scale to fit. Use a laser printer for best marker contrast. Ensure all 4 alignment markers are fully printed and not clipped.
+
+---
+
+## Requirements & Installation
+
+- Python **3.8** or higher
+
+| Package                  | Version  | Purpose                |
+| ------------------------ | -------- | ---------------------- |
+| `opencv-python-headless` | 4.9.0.80 | Image processing       |
+| `ultralytics`            | ≥ 8.0    | YOLOv8 model inference |
+| `numpy`                  | ≥ 1.21   | Numerical operations   |
+
+> **Note:** `Flask` and `uwsgi` are commented out in `requirements.txt`. They are only needed if you plan to deploy the system as a REST API web service.
+
+### Install
+
+```bash
+git clone https://github.com/phamdoantinh/paperbasedmcqscoring.git
+cd paperbasedmcqscoring
+
+# (Optional) Create a virtual environment
+python -m venv venv && source venv/bin/activate   # Linux/macOS
+# venv\Scripts\activate                            # Windows
+
+pip install -r requirements.txt
+pip install ultralytics numpy
+```
+
+The model weight file `Model/best.pt` is included in the repository and requires no separate download.
 
 ---
 
@@ -229,11 +229,11 @@ The model was obtained by fine-tuning the publicly available **YOLOv8m** pretrai
 
 Key parameters that can be adjusted directly in the source files:
 
-| Parameter           | Location                  | Default           | Description                                                           |
-| ------------------- | ------------------------- | ----------------- | --------------------------------------------------------------------- |
-| `threshold_warning` | `utils.py` (line 32)      | `0.79`            | Confidence threshold below which a prediction is flagged as uncertain |
-| `numberAnswer`      | `scoring.py` (line 245)   | `60`              | Number of questions per answer sheet (supported: `20`, `40`, `60`)    |
-| `pWeight`           | `scoring.py` (line 182)   | `./Model/best.pt` | Path to the unified YOLOv8 model weights                              |
+| Parameter           | Location     | Default           | Description                                                           |
+| ------------------- | ------------ | ----------------- | --------------------------------------------------------------------- |
+| `threshold_warning` | `utils.py`   | `0.79`            | Confidence threshold below which a prediction is flagged as uncertain |
+| `numberAnswer`      | `scoring.py` | `60`              | Number of questions per answer sheet (supported: `20`, `40`, `60`)    |
+| `pWeight`           | `scoring.py` | `./Model/best.pt` | Path to the unified YOLOv8 model weights                              |
 
 ---
 
