@@ -12,35 +12,32 @@ An automated optical scoring system for paper-based multiple-choice question (MC
 
 ## Table of Contents
 
-- [Overview](#overview)
+- [Features & Overview](#features--overview)
 - [Versioning](#versioning)
-- [Features](#features)
 - [System Architecture](#system-architecture)
-- [Requirements](#requirements)
-- [Installation](#installation)
 - [Directory Structure](#directory-structure)
 - [Answer Sheet Template](#answer-sheet-template)
+- [Requirements & Installation](#requirements--installation)
 - [Usage](#usage)
-  - [Preparing Input Images](#preparing-input-images)
-  - [Running the Scoring Pipeline](#running-the-scoring-pipeline)
-  - [Output Description](#output-description)
 - [Models](#models)
+- [Configuration](#configuration)
 - [Dataset](#dataset)
+- [Citation](#citation)
 - [License](#license)
+- [Contact](#contact)
 
 ---
 
-## Overview
+## Features & Overview
 
-This system automates the grading of paper-based MCQ exams. Given a folder of answer sheet images (JPEG or PNG), it:
+This system automates the grading of paper-based MCQ exams. Given a folder of answer sheet images (JPEG or PNG), it provides the following capabilities:
 
-1. **Detects alignment markers** on the answer sheet to correct skew and perspective.
-2. **Extracts student information** (class code, student code, exam/test-set code) from the information zone.
-3. **Recognizes selected answers** for each question (supporting up to 60 questions per sheet with multi-answer combinations A, B, C, D, AB, AC, …, ABCD).
-4. **Writes annotated output images** and structured **JSON result files** per answer sheet.
-5. **Logs potentially uncertain predictions** (low-confidence detections) to a warning file.
-
-The pipeline is designed for integration with an e-learning support platform but can also be used as a standalone batch-processing tool.
+- ✅ **Perspective Correction**: Automatic skew and perspective correction using marker-based homography.
+- ✅ **Student Info OCR**: Automatically extracts class code, student ID, and test-set code from the info zone.
+- ✅ **Flexible Grading**: Supports 20, 40, and 60 question answer sheets with single and multi-answer (A, B, C, D combinations) recognition.
+- ✅ **Comprehensive Output**: Generates annotated images highlighting detected answers and structured JSON result files.
+- ✅ **Quality Assurance**: Logs potentially uncertain predictions (low-confidence detections) to a warning file for verification.
+- ✅ **Standalone or Integrated**: Suitable for batch processing or integration with e-learning support platforms.
 
 ---
 
@@ -121,18 +118,6 @@ The answer key for all exam sets in `demo1` is pre-filled. Compare output with t
 
 ---
 
-## Features
-
-- ✅ Automatic perspective correction using marker-based homography
-- ✅ Supports 20, 40, and 60 question answer sheets
-- ✅ Multi-answer recognition (single and combination choices: AB, AC, AD, BC, BD, CD, ABC, ABD, ACD, BCD, ABCD)
-- ✅ Student information zone OCR (class code, student ID, test-set code)
-- ✅ Confidence-based warning system for low-certainty predictions
-- ✅ JSON output format for easy downstream integration
-- ✅ Annotated output images highlighting detected answers
-
----
-
 ## System Architecture
 
 ![System Architecture](docs/StructureDiagram.png)
@@ -144,67 +129,7 @@ The answer key for all exam sets in `demo1` is pre-filled. Compare output with t
 | `scoring.py`                       | Main pipeline: marker detection, image alignment, info/answer prediction, output writing        |
 | `utils.py`                         | All utilities: geometry, perspective transform, angle calculation, class mapping, image helpers |
 | `grade_from_key/grade_from_key.py` | Standalone grading script: compare scored sheets against an answer key file                     |
-| `example_grading/`                 | Self-contained grading example — no model/images needed                                         |
-
----
-
-## Requirements
-
-- Python **3.8** or higher
-- The following Python packages (see also `requirements.txt`):
-
-| Package                  | Version  | Purpose                           |
-| ------------------------ | -------- | --------------------------------- |
-| `opencv-python-headless` | 4.9.0.80 | Image processing                  |
-| `ultralytics`            | ≥ 8.3    | YOLOv11 model inference           |
-| `numpy`                  | ≥ 1.21   | Numerical operations              |
-| `Flask`                  | latest   | (Optional) REST API serving       |
-| `uwsgi`                  | latest   | (Optional) Production WSGI server |
-
-> **Note:** `Flask` and `uwsgi` are only required if you are deploying the system as a web service. For standalone batch processing, only `opencv-python-headless`, `ultralytics`, and `numpy` are needed.
-
----
-
-## Installation
-
-### 1. Clone the repository
-
-```bash
-git clone -b yolov11-version https://github.com/<your-username>/paperbasedmcqscoring.git
-cd paperbasedmcqscoring
-```
-
-### 2. Create and activate a virtual environment (recommended)
-
-```bash
-python -m venv venv
-
-# On Linux/macOS:
-source venv/bin/activate
-
-# On Windows:
-venv\Scripts\activate
-```
-
-### 3. Install dependencies
-
-```bash
-pip install -r requirements.txt
-pip install ultralytics numpy
-```
-
-### 4. Verify model files
-
-Ensure the three YOLOv11 model weight files are present in the `Model/` directory:
-
-```
-Model/
-├── marker.pt      # Alignment marker detector (~5.2 MB)
-├── info.pt        # Student information recognizer (~38.6 MB)
-└── answer.pt      # Answer choice recognizer (~38.6 MB)
-```
-
-> The model files are **not** included in this repository due to their size. Please contact the authors or download them from the provided release assets.
+| `example_grading/run_grading.py`   | Example script to show how to use the `grade_from_key` module                                   |
 
 ---
 
@@ -246,22 +171,81 @@ paperbasedmcqscoring/
 └── README.md
 ```
 
-├── REPRODUCE.md # Step-by-step reproducibility guide
-├── example_grading/ # Zero-dependency grading demo
-
 ---
 
 ## Answer Sheet Template
 
 The file `docs/AnswerSheetTemplate.pdf` is the official printable template that this system is designed to process. Print it on **A4 paper** before scanning or photographing.
 
-![Answer Sheet Template](docs/AnswerSheetTemplate.png)
+<img src="docs/AnswerSheetTemplate.png" alt="Answer Sheet Template" width="50%" align="center" style="display: block; margin-left: auto; margin-right: auto;">
 
 ### Printing Notes
 
 - Print at **100% scale** on **A4 (210 × 297 mm)** — do **not** scale to fit
 - Use a **laser printer** for best marker contrast
 - Ensure all 4 alignment markers are fully printed and not clipped by the page margin
+
+---
+
+## Requirements & Installation
+
+### Requirements
+
+- Python **3.8** or higher
+- The following Python packages (see also `requirements.txt`):
+
+| Package                  | Version  | Purpose                           |
+| ------------------------ | -------- | --------------------------------- |
+| `opencv-python-headless` | 4.9.0.80 | Image processing                  |
+| `ultralytics`            | ≥ 8.3    | YOLOv11 model inference           |
+| `numpy`                  | ≥ 1.21   | Numerical operations              |
+| `Flask`                  | latest   | (Optional) REST API serving       |
+| `uwsgi`                  | latest   | (Optional) Production WSGI server |
+
+> **Note:** `Flask` and `uwsgi` are commented out in `requirements.txt`. They are only needed if you plan to deploy the system as a REST API web service.
+
+---
+
+### Installation
+
+### 1. Clone the repository
+
+```bash
+git clone -b yolov11-version https://github.com/<your-username>/paperbasedmcqscoring.git
+cd paperbasedmcqscoring
+```
+
+### 2. Create and activate a virtual environment (recommended)
+
+```bash
+python -m venv venv
+
+# On Linux/macOS:
+source venv/bin/activate
+
+# On Windows:
+venv\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+pip install ultralytics numpy
+```
+
+### 4. Verify model files
+
+Ensure the three YOLOv11 model weight files are present in the `Model/` directory:
+
+```
+Model/
+├── marker.pt      # Alignment marker detector (~5.2 MB)
+├── info.pt        # Student information recognizer (~38.6 MB)
+└── answer.pt      # Answer choice recognizer (~38.6 MB)
+```
+
+> The model files are **not** included in this repository due to their size. Please contact the authors or download them from the provided release assets.
 
 ---
 
@@ -401,6 +385,28 @@ The dataset contains labelled answer sheet images used to train and evaluate the
 
 ---
 
+## Citation
+
+This software is based on the following peer-reviewed publication. If you use this system in academic work, please cite:
+
+**Pham Doan Tinh and Ta Quang Minh**, "Automated Paper-based Multiple Choice Scoring Framework using Fast Object Detection Algorithm," _International Journal of Advanced Computer Science and Applications (IJACSA)_, vol. 15, no. 1, 2024. DOI: [10.14569/IJACSA.2024.01501115](http://dx.doi.org/10.14569/IJACSA.2024.01501115)
+
+```bibtex
+@article{Tinh2024,
+  title     = {Automated Paper-based Multiple Choice Scoring Framework using Fast Object Detection Algorithm},
+  journal   = {International Journal of Advanced Computer Science and Applications},
+  doi       = {10.14569/IJACSA.2024.01501115},
+  url       = {http://dx.doi.org/10.14569/IJACSA.2024.01501115},
+  year      = {2024},
+  publisher = {The Science and Information Organization},
+  volume    = {15},
+  number    = {1},
+  author    = {Pham Doan Tinh and Ta Quang Minh}
+}
+```
+
+---
+
 ## License
 
 This project is licensed under the **MIT License**.
@@ -427,28 +433,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```
-
----
-
-## Citation
-
-This software is based on the following peer-reviewed publication. If you use this system in academic work, please cite:
-
-**Pham Doan Tinh and Ta Quang Minh**, "Automated Paper-based Multiple Choice Scoring Framework using Fast Object Detection Algorithm," _International Journal of Advanced Computer Science and Applications (IJACSA)_, vol. 15, no. 1, 2024. DOI: [10.14569/IJACSA.2024.01501115](http://dx.doi.org/10.14569/IJACSA.2024.01501115)
-
-```bibtex
-@article{Tinh2024,
-  title     = {Automated Paper-based Multiple Choice Scoring Framework using Fast Object Detection Algorithm},
-  journal   = {International Journal of Advanced Computer Science and Applications},
-  doi       = {10.14569/IJACSA.2024.01501115},
-  url       = {http://dx.doi.org/10.14569/IJACSA.2024.01501115},
-  year      = {2024},
-  publisher = {The Science and Information Organization},
-  volume    = {15},
-  number    = {1},
-  author    = {Pham Doan Tinh and Ta Quang Minh}
-}
 ```
 
 ---
