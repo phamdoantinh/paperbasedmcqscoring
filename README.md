@@ -452,7 +452,7 @@ This software is based on the following peer-reviewed publication. If you use th
 
 For questions, issues, or contributions, please open a GitHub Issue or contact the authors:
 
-- **Pham Doan Tinh** — corresponding author
-- **Ta Quang Minh** - Email: taminh596@gmail.com - Phone: +84 979047751
+- **Pham Doan Tinh** — main author - [Send mail](mailto:tinh.phamdoan@hust.edu.vn)
+- **Ta Quang Minh** - corresponding author - [Send email](mailto:taminh596@gmail.com)
 
 Paper available at: [https://thesai.org/Publications/ViewPaper?Volume=15&Issue=1&Code=IJACSA&SerialNo=115](https://thesai.org/Publications/ViewPaper?Volume=15&Issue=1&Code=IJACSA&SerialNo=115)
