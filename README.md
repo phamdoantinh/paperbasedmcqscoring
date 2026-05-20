@@ -14,6 +14,8 @@ An automated optical scoring system for paper-based multiple-choice question (MC
 
 - [Features & Overview](#features--overview)
 - [Versioning](#versioning)
+- [System Comparison](#system-comparison)
+- [Reproducibility](#reproducibility)
 - [System Architecture](#system-architecture)
 - [Directory Structure](#directory-structure)
 - [Answer Sheet Template](#answer-sheet-template)
@@ -82,6 +84,13 @@ The **current version** (`yolov11-version` branch) separates the detection into 
 | `answer.pt` | Answer bubble classification          | Improved accuracy on multi-choice combinations |
 
 This specialization allows each model to be fine-tuned independently and retrained without affecting the other tasks, improving both accuracy and maintainability.
+
+## System Comparison
+
+To see how our YOLO-based pipeline stacks up against other popular OMR methods and existing academic literature:
+
+- 📊 **Comparative Benchmarking**: Refer to [`COMPARISON.md`](COMPARISON.md) for an in-depth analysis comparing accuracy, processing speed, and architecture against **OMRChecker** and **Auto-Scores**.
+- 📄 **Related Works & Literature Review**: A detailed survey comparing this project with other academic papers in the same field is available in [`docs/related_work.pdf`](docs/related_work.pdf).
 
 ---
 
